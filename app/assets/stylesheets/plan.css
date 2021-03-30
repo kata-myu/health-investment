@@ -524,3 +524,39 @@ h4 {
 
 /* 検索ページ */
 
+
+
+
+
+/* レスポンシブ化 */
+
+@media (max-width: 1024px) {
+  p {
+    font-size: 14px;
+  }
+  .side {
+    width: 30%;
+  }
+  .main {
+    width: calc(100vw - 30%);
+  }
+
+  .content {
+    height: 287px;
+    width: 287px;
+    margin: 11px 25px;
+  }
+}
+
+
+@media (max-width: 599px) {
+  p {
+    font-size: 10px;
+  }
+  .side {
+    width: 30%px;
+  }
+  .main {
+    width: calc(100vw - 30%);
+  }
+}
