@@ -35,7 +35,7 @@
 
   <div class="main">
     <div class="contents">
-      <%= form_with model:@plan, local: true do |f| %>
+      <%= form_with model:@plan do |f| %>
         <%= f.label :日付を選択, class: "label" %>
         <%= f.date_field :date %>
         <%= f.label :予定を入力, class: "label" %>
