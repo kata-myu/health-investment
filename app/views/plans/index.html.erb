@@ -1,8 +1,16 @@
 <header>
   <h2 class="blog-title">HealthInvestment</h2>
+  <% if user_signed_in? %>
     <div class="tags">
-      <%= link_to "新規投稿", "#", class: "new-blog" %>
+      <%= link_to "新規投稿", "#", class: "header-btn" %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn" %>
     </div>
+  <% else %>
+    <div class="tags">
+      <%= link_to "ログイン", new_user_session_path, class: "header-btn" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "header-btn" %>
+    </div>
+  <% end %>
 </header>
 
 <div class="wrapper">
