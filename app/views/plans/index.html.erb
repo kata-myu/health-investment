@@ -35,6 +35,13 @@
 
   <div class="main">
     <div class="contents">
+      <%= form_with model:@plan do |f| %>
+        <%= f.label :日付を選択, class: "label" %>
+        <%= f.date_field :date %>
+        <%= f.label :予定を入力, class: "label" %>
+        <%= f.text_field :plan %>
+        <%= f.submit "保存" %>
+      <% end %>
       <div class="calender">
         <div class="content">
           <div>4/1<i class="far fa-check-square"></i></div>
