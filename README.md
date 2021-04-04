@@ -36,8 +36,8 @@
 ## achievementsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|plan|references|null: false|
-|user|references|null: false|
+|plan|references|foreign_key: true|
+|user|references|foreign_key: true|
 ### Association
 - belongs_to :plan
 - belongs_to :user
