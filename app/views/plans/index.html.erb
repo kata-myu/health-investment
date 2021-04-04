@@ -61,7 +61,7 @@
             <div class="plan" data-index=<%= x + 1 %>>
               <% if day[:plans].length != 0 %>
                 <% day[:plans].each do |plan| %>
-                  <p>・<%= plan %></p>
+                  <p>・<%= plan %><input type="checkbox" ></p>
                 <% end %>
               <% end %>
             </div>
