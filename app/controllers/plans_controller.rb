@@ -10,6 +10,40 @@ class PlansController < ApplicationController
     redirect_to action: :index
   end
 
+  def basic 
+    plans = {}
+    7.times do |x|
+      plan1 = Plan.create(plan: "ウォーキング20分", date: (Date.today + x), user_id: current_user.id)
+      plan2 = Plan.create(plan: "腕立て伏せ15回", date: (Date.today + x), user_id: current_user.id)
+      plan3 = Plan.create(plan: "腹筋15回", date: (Date.today + x), user_id: current_user.id)
+      plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+    end
+    render json: {plans: plans}
+  end
+
+  def normal 
+    plans = {}
+    7.times do |x|
+      plan1 = Plan.create(plan: "ランニング20分", date: (Date.today + x), user_id: current_user.id)
+      plan2 = Plan.create(plan: "腕立て伏せ30回", date: (Date.today + x), user_id: current_user.id)
+      plan3 = Plan.create(plan: "腹筋30回", date: (Date.today + x), user_id: current_user.id)
+      plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+    end
+    render json: {plans: plans}
+  end
+
+  def hard 
+    plans = {}
+    7.times do |x|
+      plan1 = Plan.create(plan: "ランニング40分", date: (Date.today + x), user_id: current_user.id)
+      plan2 = Plan.create(plan: "腕立て伏せ60回", date: (Date.today + x), user_id: current_user.id)
+      plan3 = Plan.create(plan: "腹筋60回", date: (Date.today + x), user_id: current_user.id)
+      plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+    end
+    render json: {plans: plans}
+  end
+
+
   private
   def plan_params
     params.require(:plan).permit(:plan, :date).merge(user_id: current_user.id)
@@ -32,11 +66,10 @@ class PlansController < ApplicationController
 
       wday_num = (@todays_date + x).wday
 
-      
-
       days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, wday: wdays[wday_num], :plans => plans}
       @week_days.push(days)
     end
   end
   
+
 end

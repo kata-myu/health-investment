@@ -43,15 +43,22 @@
           <%= f.text_field :plan %>
           <%= f.submit "保存" %>
         <% end %>
-        <%# <button class="quick-btn">簡単予定入力</button> %>
+        <div id="quick-area">
+          <span id="quick-btn">簡単予定入力</span>
+          <ul class="more_list">
+            <li class="basic">Basicメニューで入力</li>
+            <li class="normal">Normalメニューで入力</li>
+            <li class="hard">Hardメニューで入力</li>
+          </ul>
+        </div>
       </div>
       <div class="calender">
-        <% @week_days.each do |day| %>
+        <% @week_days.each_with_index do |day, x| %>
           <div class="content">
             <div class='date'>
               <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %><i class="far fa-check-square"></i>
             </div>
-            <div class="plan">
+            <div class="plan" data-index=<%= x + 1 %>>
               <% if day[:plans].length != 0 %>
                 <% day[:plans].each do |plan| %>
                   <p>・<%= plan %></p>
