@@ -3,6 +3,8 @@ class PlansController < ApplicationController
     get_week
     @month = Time.current.all_month
     @plan = Plan.new
+
+    @point = current_user.point
   end
 
   def create
