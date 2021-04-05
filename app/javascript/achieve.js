@@ -11,6 +11,12 @@ const achieve = () => {
       XHR.onload = () => {
         const achievement = XHR.response.achievement;
         console.log(achievement);
+        const run = XHR.response.run;
+        if(run == true) {
+          const done = document.getElementById("done");
+          HTML = `<div>本日の予定は完了です！</div>`;
+          done.insertAdjacentHTML("beforeend", HTML);
+        }
       };
       XHR.onerror = () => {
         alert("リクエストに失敗しました");

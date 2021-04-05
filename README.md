@@ -10,16 +10,7 @@
 - has_many :plans
 - has_many :achievements
 - has_one :point
-
-
-## pointsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|point|integer|null: false, default: 0|
-|user|references|foreign_key: true|
-### Association
-- belongs_to :user
-
+- has_many :runs
 
 
 ## plansテーブル
@@ -40,4 +31,13 @@
 |user|references|foreign_key: true|
 ### Association
 - belongs_to :plan
+- belongs_to :user
+
+
+## runsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|run|boolean|null: false|
+|user|references|foreign_key: true|
+### Association
 - belongs_to :user

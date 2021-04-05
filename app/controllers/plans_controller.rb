@@ -1,10 +1,13 @@
 class PlansController < ApplicationController
   def index
     get_week
-    @month = Time.current.all_month
     @plan = Plan.new
 
     @point = current_user.point
+
+    @run = Run.where('created_at LIKE?', "%#{Date.today}%")
+
+    @run_count = run_count
   end
 
   def create
@@ -71,6 +74,37 @@ class PlansController < ApplicationController
 
       days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, wday: wdays[wday_num], :plans => plans}
       @week_days.push(days)
+    end
+  end
+
+
+  # 継続日数を算出する
+  def run_count
+    count = 0
+    @runs_a = []
+    @days_a = []
+
+    @days = []
+    @runs = current_user.runs
+    @runs.each do |run| 
+      @days.push(run.date)
+    end
+
+    @days.each do |day|
+      @days_a.push(day)
+      count = count + 1
+      if @days_a.length >= 2
+        if @days_a[-2] != @days_a[-1] - 1
+          @runs_a.push(count - 1)
+          count = 1
+        end
+      end
+    end
+
+    if @runs_a.length == 0
+      return @days_a.length
+    else
+      return @runs_a.max
     end
   end
   

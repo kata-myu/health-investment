@@ -4,8 +4,16 @@ class AchievementsController < ApplicationController
   def create
     plan = Plan.find(params[:id])
     achievement = Achievement.create(plan_id: plan.id, user_id: current_user.id)
+
+    plans = Plan.where(date: Date.today)
+    judgment = plans.select{ |plan| plan.achievement == nil}
+    if judgment.present?
+      render json: {achievement: achievement, run: false}
+    elsif judgment.empty?
+      @run = Run.create(run: true, date: Date.today, user_id: current_user.id)
+      render json: {achievement: achievement, run: true}
+    end
     
-    render json: {achievement: achievement}
   end
 
   def destroy
