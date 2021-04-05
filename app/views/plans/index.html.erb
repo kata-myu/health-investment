@@ -24,7 +24,7 @@
     <p>あなたのポイント</p>
     <p><%= @point %>pt</p>
     <p>継続日数</p>
-    <p>○○日</p>
+    <p><%= @run_count %>日</p>
     <div class="side-btns"> 
     </div>
     <div class="recommended">
@@ -44,7 +44,7 @@
           <%= f.submit "保存" %>
         <% end %>
         <div id="quick-area">
-          <span id="quick-btn">簡単予定入力</span>
+          <div id="quick-btn">簡単予定入力</div>
           <ul class="more_list">
             <li class="basic">Basicメニューで入力</li>
             <li class="normal">Normalメニューで入力</li>
@@ -52,11 +52,16 @@
           </ul>
         </div>
       </div>
+      <div id="done">
+        <% if @run.present? %>
+          <div>本日の予定は完了です！</div>
+        <% end %>
+      </div>
       <div class="calender">
         <% @week_days.each_with_index do |day, x| %>
           <div class="content">
             <div class='date'>
-              <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %><i class="far fa-check-square"></i>
+              <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
             </div>
             <div class="plan" data-index=<%= x + 1 %>>
               <% if day[:plans].length != 0 %>

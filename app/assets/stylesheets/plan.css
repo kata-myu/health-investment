@@ -61,7 +61,7 @@ header {
   /* height: calc(100vh - 200px); */
   /* background-image: url("white"); */
   background-color: aquamarine;
-  height: 1550px;
+  height: 1574px;
   display: flex;
 }
 
@@ -76,7 +76,7 @@ header {
 
 .contents {
   margin-top: 30px;
-  display: flex;
+  /* display: flex; */
   /* justify-content: space-between; */
   flex-wrap: wrap;
 }
