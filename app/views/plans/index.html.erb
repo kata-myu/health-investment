@@ -64,7 +64,7 @@
                   <% if Plan.find(hash[:id]).achievement == nil  %>
                     <p>・<%= hash[:plan] %><input type="checkbox" class="achieve-check" data-id=<%= hash[:id] %>></p>
                   <% else %>
-                    <p>・<%= hash[:plan] %><input type="checkbox" checked="checked" class="achieve-check" data-id=<%= hash[:id] %>></p>
+                    <p>・<%= hash[:plan] %><input type="checkbox" checked="checked" class="achieve-checked" data-id=<%= hash[:id] %>></p>
                   <% end %>
                 <% end %>
               <% end %>

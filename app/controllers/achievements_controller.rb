@@ -8,4 +8,12 @@ class AchievementsController < ApplicationController
     render json: {achievement: achievement}
   end
 
+  def destroy
+    plan = Plan.find(params[:id])
+    achievement = plan.achievement
+    achievement.destroy
+    
+    render json: {achievement: achievement}
+  end
+
 end
