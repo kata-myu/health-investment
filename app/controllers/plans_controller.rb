@@ -61,7 +61,8 @@ class PlansController < ApplicationController
     30.times do |x|
       plans = []
       plan = @plans.map do |plan|
-        plans.push(plan.plan) if plan.date == @todays_date + x   #←1回目は@todays_date + xに合うものしかplansにpushされない。4/1の予定が「サッカー」だけなら["サッカー"]となり、「サッカー」と「買い物」なら["サッカー", "買い物"]となる。
+        hash = {plan: plan.plan, id: plan.id}
+        plans.push(hash) if plan.date == @todays_date + x   #←1回目は@todays_date + xに合うものしかplansにpushされない。4/1の予定が「サッカー」だけなら["サッカー"]となり、「サッカー」と「買い物」なら["サッカー", "買い物"]となる。
       end
 
       wday_num = (@todays_date + x).wday
