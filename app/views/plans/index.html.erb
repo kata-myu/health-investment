@@ -60,8 +60,12 @@
             </div>
             <div class="plan" data-index=<%= x + 1 %>>
               <% if day[:plans].length != 0 %>
-                <% day[:plans].each do |plan| %>
-                  <p>・<%= plan %></p>
+                <% day[:plans].each do |hash| %>
+                  <% if Plan.find(hash[:id]).achievement == nil  %>
+                    <p>・<%= hash[:plan] %><input type="checkbox" class="achieve-check" data-id=<%= hash[:id] %>></p>
+                  <% else %>
+                    <p>・<%= hash[:plan] %><input type="checkbox" checked="checked" class="achieve-checked" data-id=<%= hash[:id] %>></p>
+                  <% end %>
                 <% end %>
               <% end %>
             </div>
