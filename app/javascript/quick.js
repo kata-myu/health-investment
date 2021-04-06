@@ -24,9 +24,9 @@ const quick = () => {
       for (let i = 1; i < 8; i++) {
         const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
          HTML = 
-          `<p>・${plans.plan1.plan}</p>
-           <p>・${plans.plan2.plan}</p>
-           <p>・${plans.plan3.plan}</p>
+          `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %>></p>
+           <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %>></p>
+           <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %>></p>
           `;
         dayplan.insertAdjacentHTML("beforeend", HTML);
       }
@@ -55,9 +55,9 @@ const quick = () => {
       for (let i = 1; i < 8; i++) {
         const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
          HTML = 
-          `<p>・${plans.plan1.plan}</p>
-           <p>・${plans.plan2.plan}</p>
-           <p>・${plans.plan3.plan}</p>
+          `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %>></p>
+           <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %>></p>
+           <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %>></p>
           `;
         dayplan.insertAdjacentHTML("beforeend", HTML);
       }
@@ -86,9 +86,9 @@ const quick = () => {
       for (let i = 1; i < 8; i++) {
         const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
          HTML = 
-          `<p>・${plans.plan1.plan}</p>
-           <p>・${plans.plan2.plan}</p>
-           <p>・${plans.plan3.plan}</p>
+          `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %>></p>
+           <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %>></p>
+           <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %>></p>
           `;
         dayplan.insertAdjacentHTML("beforeend", HTML);
       }
