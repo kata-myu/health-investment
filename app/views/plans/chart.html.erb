@@ -1,0 +1,46 @@
+<div class="chart-head">
+  <h2>達成ステータス</h2>
+  <%= link_to "戻る", root_path %>
+</div>
+
+<canvas id="myBarChart"></canvas>
+<script>
+  var ctx = document.getElementById("myBarChart");
+  var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: gon.days,
+      datasets: [
+        {
+          label: 'プランの総達成回数',
+          data: gon.achievements_array,
+          backgroundColor: "rgba(219,39,91,0.5)"
+        },{
+          label: '保持しているポイント',
+          data: gon.days,
+          backgroundColor: "rgba(130,201,169,0.5)"
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'プランの達成回数 獲得ポイント'
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            suggestedMax: 100,
+            suggestedMin: 0,
+            stepSize: 10,
+            callback: function(value, index, values){
+              return  value +  '回'
+            }
+          }
+        }]
+      },
+    }
+  });
+  </script>
+
+

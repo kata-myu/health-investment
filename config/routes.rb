@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'basic'
       get 'normal'
       get 'hard'
+      get 'chart'
     end
   end
 end
