@@ -1,2 +1,0 @@
-# namespace :poit do
-# end
