@@ -58,3 +58,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 
 gem 'pry-rails'
+
+gem 'chart-js-rails', '~> 0.1.4'
+
+gem 'gon'

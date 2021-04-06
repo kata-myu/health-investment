@@ -3,11 +3,15 @@ class PlansController < ApplicationController
     get_week
     @plan = Plan.new
 
-    @point = current_user.point
+    if user_signed_in?
+      @point = current_user.point
+
+      @run_count = run_count
+    end
 
     @run = Run.where('created_at LIKE?', "%#{Date.today}%")
 
-    @run_count = run_count
+    
   end
 
   def create
@@ -46,6 +50,45 @@ class PlansController < ApplicationController
       plans = {plan1: plan1, plan2: plan2, plan3: plan3}
     end
     render json: {plans: plans}
+  end
+
+  def chart 
+    plans = current_user.plans
+
+    @day = Date.today
+    
+    achievements = []
+    plans.each do |plan|
+      if plan.achievement.present?
+        achievements.push(plan)
+      end
+    end
+    achievements_amount = []
+    achievement_num = achievements.length
+    7.times do |x|
+      if x != 0 
+        day_achieve = Achievement.where(date: Date.today - (x - 1)).where(user_id: current_user.id)
+        day_num = day_achieve.length
+        achievement_num = achievement_num - day_num
+      end
+      achievements_amount.push(achievement_num)
+    end
+    gon.achievements_array = achievements_amount.reverse
+
+   
+    @days = []
+    7.times do |x|
+      @days.push(@day - x)
+    end
+    gon.days = @days.reverse
+
+    @points = []
+    7.times do |x|
+      today = Date.today
+      point = User.where('created_at LIKE?', "%#{today - x}%")
+      @points.push(point)
+    end
+    gon.point = @points.reverse
   end
 
 

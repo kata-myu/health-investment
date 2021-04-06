@@ -19,3 +19,4 @@ require("../achieve")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+//= require Chart.min

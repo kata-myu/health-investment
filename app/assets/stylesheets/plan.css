@@ -631,3 +631,11 @@ h4 {
     width: calc(100vw - 30%);
   }
 }
+
+
+/* チャート画面 */
+
+.chart-head {
+  display: flex;
+  justify-content: space-between;
+}

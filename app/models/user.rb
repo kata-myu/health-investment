@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :achievements
   has_many :runs
+  has_many :plans
 end

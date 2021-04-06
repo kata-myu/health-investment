@@ -3,7 +3,7 @@ class AchievementsController < ApplicationController
 
   def create
     plan = Plan.find(params[:id])
-    achievement = Achievement.create(plan_id: plan.id, user_id: current_user.id)
+    achievement = Achievement.create(plan_id: plan.id, user_id: current_user.id, date: Date.today)
 
     plans = Plan.where(date: Date.today)
     judgment = plans.select{ |plan| plan.achievement == nil}
