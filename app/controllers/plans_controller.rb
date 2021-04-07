@@ -22,10 +22,16 @@ class PlansController < ApplicationController
   def basic 
     plans = {}
     7.times do |x|
-      plan1 = Plan.create(plan: "ウォーキング20分", date: (Date.today + x), user_id: current_user.id)
-      plan2 = Plan.create(plan: "腕立て伏せ15回", date: (Date.today + x), user_id: current_user.id)
-      plan3 = Plan.create(plan: "腹筋15回", date: (Date.today + x), user_id: current_user.id)
-      plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+      pre_plans = Plan.where(date: (Date.today + x))
+      if pre_plans.length <= 4
+        plan1 = Plan.create(plan: "ウォーキング20分", date: (Date.today + x), user_id: current_user.id)
+        plan2 = Plan.create(plan: "腕立て伏せ15回", date: (Date.today + x), user_id: current_user.id)
+        plan3 = Plan.create(plan: "腹筋15回", date: (Date.today + x), user_id: current_user.id)
+        plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+      else
+        render json: {plans: {}}
+        return 
+      end
     end
     render json: {plans: plans}
   end
@@ -33,10 +39,16 @@ class PlansController < ApplicationController
   def normal 
     plans = {}
     7.times do |x|
-      plan1 = Plan.create(plan: "ランニング20分", date: (Date.today + x), user_id: current_user.id)
-      plan2 = Plan.create(plan: "腕立て伏せ30回", date: (Date.today + x), user_id: current_user.id)
-      plan3 = Plan.create(plan: "腹筋30回", date: (Date.today + x), user_id: current_user.id)
-      plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+      pre_plans = Plan.where(date: (Date.today + x))
+      if pre_plans.length <= 4
+        plan1 = Plan.create(plan: "ランニング20分", date: (Date.today + x), user_id: current_user.id)
+        plan2 = Plan.create(plan: "腕立て伏せ30回", date: (Date.today + x), user_id: current_user.id)
+        plan3 = Plan.create(plan: "腹筋30回", date: (Date.today + x), user_id: current_user.id)
+        plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+      else
+        render json: {plans: {}}
+        return 
+      end
     end
     render json: {plans: plans}
   end
@@ -44,10 +56,16 @@ class PlansController < ApplicationController
   def hard 
     plans = {}
     7.times do |x|
-      plan1 = Plan.create(plan: "ランニング40分", date: (Date.today + x), user_id: current_user.id)
-      plan2 = Plan.create(plan: "腕立て伏せ60回", date: (Date.today + x), user_id: current_user.id)
-      plan3 = Plan.create(plan: "腹筋60回", date: (Date.today + x), user_id: current_user.id)
-      plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+      pre_plans = Plan.where(date: (Date.today + x))
+      if pre_plans.length <= 4
+        plan1 = Plan.create(plan: "ランニング40分", date: (Date.today + x), user_id: current_user.id)
+        plan2 = Plan.create(plan: "腕立て伏せ60回", date: (Date.today + x), user_id: current_user.id)
+        plan3 = Plan.create(plan: "腹筋60回", date: (Date.today + x), user_id: current_user.id)
+        plans = {plan1: plan1, plan2: plan2, plan3: plan3}
+      else
+        render json: {plans: {}}
+        return 
+      end
     end
     render json: {plans: plans}
   end

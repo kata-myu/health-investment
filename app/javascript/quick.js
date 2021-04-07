@@ -21,15 +21,32 @@ const quick = () => {
       const plans = XHR.response.plans;
       console.log(plans);
 
-      for (let i = 1; i < 8; i++) {
-        const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
-         HTML = 
-          `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
-           <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
-           <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
-          `;
-        dayplan.insertAdjacentHTML("beforeend", HTML);
+      if (plans.plan1){
+        for (let i = 1; i < 8; i++) {
+          switch(i){
+            case 1:
+            const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
+            HTML = 
+             `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
+              <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
+              <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
+              `;
+            dayplan.insertAdjacentHTML("beforeend", HTML);
+            break;
+            default:
+            const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
+            HTML = 
+             `<p>・${plans.plan1.plan}</p>
+              <p>・${plans.plan2.plan}</p>
+              <p>・${plans.plan3.plan}</p>
+              `;
+            dayplan2.insertAdjacentHTML("beforeend", HTML);
+          }
+        }}
+      else {
+        alert("1日に登録できるプランは最大6のため簡単登録ができません！個別登録をお願いします！")
       }
+
       if (XHR.status != 200) {
         alert (`Error ${XHR.status}: ${XHR.statusText}`);
       } else {
@@ -52,15 +69,32 @@ const quick = () => {
       const plans = XHR.response.plans;
       console.log(plans);
 
-      for (let i = 1; i < 8; i++) {
-        const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
-         HTML = 
-          `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
-           <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
-           <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
-          `;
-        dayplan.insertAdjacentHTML("beforeend", HTML);
+      if (plans.plan1){
+        for (let i = 1; i < 8; i++) {
+          switch(i){
+            case 1:
+            const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
+            HTML = 
+             `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
+              <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
+              <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
+              `;
+            dayplan.insertAdjacentHTML("beforeend", HTML);
+            break;
+            default:
+            const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
+            HTML = 
+             `<p>・${plans.plan1.plan}</p>
+              <p>・${plans.plan2.plan}</p>
+              <p>・${plans.plan3.plan}</p>
+              `;
+            dayplan2.insertAdjacentHTML("beforeend", HTML);
+          }
+        }}
+      else {
+        alert("1日に登録できるプランは最大6のため簡単登録ができません！個別登録をお願いします！")
       }
+
       if (XHR.status != 200) {
         alert (`Error ${XHR.status}: ${XHR.statusText}`);
       } else {
@@ -83,15 +117,32 @@ const quick = () => {
       const plans = XHR.response.plans;
       console.log(plans);
 
-      for (let i = 1; i < 8; i++) {
-        const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
-         HTML = 
-          `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
-           <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
-           <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
-          `;
-        dayplan.insertAdjacentHTML("beforeend", HTML);
+      if (plans.plan1){
+        for (let i = 1; i < 8; i++) {
+          switch(i){
+            case 1:
+            const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
+            HTML = 
+             `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
+              <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
+              <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
+              `;
+            dayplan.insertAdjacentHTML("beforeend", HTML);
+            break;
+            default:
+            const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
+            HTML = 
+             `<p>・${plans.plan1.plan}</p>
+              <p>・${plans.plan2.plan}</p>
+              <p>・${plans.plan3.plan}</p>
+              `;
+            dayplan2.insertAdjacentHTML("beforeend", HTML);
+          }
+        }}
+      else {
+        alert("1日に登録できるプランは最大6のため簡単登録ができません！個別登録をお願いします！")
       }
+
       if (XHR.status != 200) {
         alert (`Error ${XHR.status}: ${XHR.statusText}`);
       } else {
