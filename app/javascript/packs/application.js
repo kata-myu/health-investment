@@ -11,6 +11,7 @@ require("channels")
 
 require("../quick")
 require("../achieve")
+require("../notification")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
