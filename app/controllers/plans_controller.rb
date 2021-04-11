@@ -15,9 +15,15 @@ class PlansController < ApplicationController
   end
 
   def create
-    @plan = Plan.create(plan_params)
-    redirect_to action: :index
+    if @plan = Plan.create(plan_params)
+      redirect_to action: :index
+    else
+      redirect_to root_path, notice: "日付とプランを正しく入力してください！"
+    end
   end
+
+
+  # 簡単登録
 
   def basic 
     plans = {}
@@ -70,6 +76,8 @@ class PlansController < ApplicationController
     render json: {plans: plans}
   end
 
+
+  # プラン達成数グラフ
   def chart 
     plans = current_user.plans
 
