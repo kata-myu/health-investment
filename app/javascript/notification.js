@@ -1,8 +1,16 @@
+// const point = () => {
+//   const XHR = new XMLHttpRequest();
+//   XHR.open("GET", "", true);
+//   XHR.responseType = "json";
+//   XHR.send();
+// }
+
+
 // const notification = () => {
 //   const payload = {
 //     text: "ポイントが付与される日です！\n" +
 //           "サイドバーから確認できます。" + "\n" +
-//           "引き続き、継続していきましょう！" + "\n"
+//           "継続することで、健康投資効果がどんどん高まります！" + "\n"
 //   }
 
 //   const url = ""
@@ -17,12 +25,13 @@
 
 // const checkTime = () => {
 //   let preDate; 
-//   setInterval(checkTime, 10000000)
+//   setInterval(checkTime, 100000)
 //   const currentTime = new Date();
 //   const date = currentTime.getDate();
 //   console.log(date);
 //   if (preDate !== date && date % 5 === 0) {
 //     preDate = date;
+//     point
 //     notification
 //   }
 // };

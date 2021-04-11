@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :runs
   has_many :plans
 
-  validates :nickname, presence: ture
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i}
+  validates :nickname, presence: true, length: { maximum: 20 }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i, message: "Include both letters and numbers"}
 end
