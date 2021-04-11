@@ -173,6 +173,28 @@ class PlansController < ApplicationController
   end
 
 
+  # プッシュ通知
+  def push
+    date = Date.today
+
+    if user_signed_in?
+      plans = current_user.plans
+      day_plans = plans.select{ |plan| plan.date == Date.today }
+      achieve_plans = day_plans.select{ |plan| plan.achievement == nil }
+      binding.pry
+      if achieve_plans.empty?
+        render json: {achieve: "ok"}
+      else
+        render json: {achieve: "no"}
+      end
+
+    else
+      render json: {achieve: "not login"}
+    end
+
+  end
+
+
   private
   def plan_params
     params.require(:plan).permit(:plan, :date).merge(user_id: current_user.id)
