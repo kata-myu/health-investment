@@ -118,6 +118,61 @@ class PlansController < ApplicationController
   end
 
 
+  # ポイント付与
+  def point 
+    pre_point = current_user.point
+
+    user_point = 0
+    users = User.all
+
+    users.each do |user|
+      if user.runs.length > 100
+        user_point = user.point + 3
+        user.update(nickname: user.nickname, point: user_point)
+      elsif user.runs.length > 30
+        user_point = user.point + 2
+        user.update(nickname: user.nickname, point: user_point)
+      elsif user.runs.length > 10
+        user_point = user.point + 1
+        user.update(nickname: user.nickname, point: user_point)
+      else
+        user_point = user_point 
+      end
+    end
+
+    users.each do |user|
+      if user.achievements.length > 1000
+        user_point = user.point + 5
+        user.update(nickname: user.nickname, point: user_point)
+      elsif user.achievements.length > 500
+        user_point = user.point + 4
+        user.update(nickname: user.nickname, point: user_point)
+      elsif user.achievements.length > 100
+        user_point = user.point + 3
+        user.update(nickname: user.nickname, point: user_point)
+      elsif user.achievements.length > 50
+        user_point = user.point + 2
+        user.update(nickname: user.nickname, point: user_point)
+      elsif user.achievements.length > 20
+        user_point = user.point + 1
+        user.update(nickname: user.nickname, point: user_point)
+      elsif user.achievements.length > 7
+        user_point = user.point + 0.5
+        user.update(nickname: user.nickname, point: user_point)
+      elsif user.achievements.length > 3
+        user_point = user.point + 0.2
+        user.update(nickname: user.nickname, point: user_point)
+      else
+        user_point = user_point
+      end 
+    end
+
+    current_point = current_user.point - pre_point
+
+    render json: {point: current_point}
+  end
+
+
   private
   def plan_params
     params.require(:plan).permit(:plan, :date).merge(user_id: current_user.id)
