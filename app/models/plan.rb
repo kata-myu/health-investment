@@ -1,5 +1,5 @@
 class Plan < ApplicationRecord
-  has_one :achievement
+  has_one :achievement, dependent: :destroy
   belongs_to :user
 
   with_options presence: true do

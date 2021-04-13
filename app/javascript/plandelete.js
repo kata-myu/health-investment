@@ -1,10 +1,13 @@
 const plandelete = () => {
   const deleteBtns = document.querySelectorAll(".plan-delete-btn");
-  console.log(deleteBtns);
   deleteBtns.forEach((deleteBtn) =>{
+    if (deleteBtn.getAttribute("data-load") != null) {
+      return null;
+    }
+    deleteBtn.setAttribute("data-load", "true");
+
     deleteBtn.addEventListener("click", (e) => {
       const dataId = e.target.getAttribute("data-id");
-
       const XHR = new XMLHttpRequest();
       XHR.open("DELETE", `/plans/${dataId}`, true);
       XHR.responseType = "json";
@@ -24,4 +27,4 @@ const plandelete = () => {
   });
 };
 
-window.addEventListener("load", plandelete);
+setInterval(plandelete, 1000);
