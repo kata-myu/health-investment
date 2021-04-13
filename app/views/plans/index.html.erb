@@ -71,9 +71,9 @@
                 <% if day[:plans].length != 0 %>
                   <% day[:plans].each do |hash| %>
                     <% if Plan.find(hash[:id]).achievement == nil  %>
-                      <p>・<%= hash[:plan] %><input type="checkbox" class="achieve-check" data-id=<%= hash[:id] %>></p>
+                      <div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= hash[:id] %>> <%= hash[:plan] %> <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= hash[:id] %>>削除</span></div></div>
                     <% else %>
-                      <p>・<%= hash[:plan] %><input type="checkbox" checked="checked" class="achieve-checked" data-id=<%= hash[:id] %>></p>
+                      <div class="plan-element" ><input type="checkbox" checked="checked" class="achieve-checked" data-id=<%= hash[:id] %>> <%= hash[:plan] %> <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= hash[:id] %>>削除</span></div></div>
                     <% end %>
                   <% end %>
                 <% end %>
@@ -87,7 +87,7 @@
               <div class="plan" data-index=<%= x + 1 %>>
                 <% if day[:plans].length != 0 %>
                   <% day[:plans].each do |hash| %>
-                      <p>・<%= hash[:plan] %></p>
+                      <div class="plan-element" >・<%= hash[:plan] %> <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= hash[:id] %>>削除</span></div></div>
                   <% end %>
                 <% end %>
               </div>

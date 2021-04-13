@@ -1,4 +1,6 @@
 class PlansController < ApplicationController
+  protect_from_forgery except: :destroy
+  
   def index
     get_week
     @plan = Plan.new
@@ -19,6 +21,15 @@ class PlansController < ApplicationController
       redirect_to action: :index
     else
       redirect_to root_path, notice: "日付とプランを正しく入力してください！"
+    end
+  end
+
+  def destroy
+    plan = Plan.find(params[:id])
+    if plan.destroy
+      render json:{plan: plan}
+    else
+      render json:{plan: "削除に失敗しました"}
     end
   end
 
