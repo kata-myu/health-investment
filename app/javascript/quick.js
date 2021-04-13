@@ -27,18 +27,18 @@ const quick = () => {
             case 1:
             const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
-              <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
-              <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
+             `<div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %> ${plans.plan1.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan1.id} %>>削除</span></div></div>
+              <div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %> ${plans.plan2.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan2.id} %>>削除</span></div></div>
+              <div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %> ${plans.plan3.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan3.id} %>>削除</span></div></div>
               `;
             dayplan.insertAdjacentHTML("beforeend", HTML);
             break;
             default:
             const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<p>・${plans.plan1.plan}</p>
-              <p>・${plans.plan2.plan}</p>
-              <p>・${plans.plan3.plan}</p>
+             `<div class="plan-element" >・${plans.plan1.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan1.id} %>>削除</span></div></div>
+              <div class="plan-element" >・${plans.plan2.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan2.id} %>>削除</span></div></div>
+              <div class="plan-element" >・${plans.plan3.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan3.id} %>>削除</span></div></div>
               `;
             dayplan2.insertAdjacentHTML("beforeend", HTML);
           }
@@ -75,18 +75,18 @@ const quick = () => {
             case 1:
             const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
-              <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
-              <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
+             `<div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %> ${plans.plan1.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan1.id} %>>削除</span></div></div>
+              <div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %> ${plans.plan2.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan2.id} %>>削除</span></div></div>
+              <div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %> ${plans.plan3.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan3.id} %>>削除</span></div></div>
               `;
             dayplan.insertAdjacentHTML("beforeend", HTML);
             break;
             default:
             const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<p>・${plans.plan1.plan}</p>
-              <p>・${plans.plan2.plan}</p>
-              <p>・${plans.plan3.plan}</p>
+             `<div class="plan-element" >・${plans.plan1.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan1.id} %>>削除</span></div></div>
+              <div class="plan-element" >・${plans.plan2.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan2.id} %>>削除</span></div></div>
+              <div class="plan-element" >・${plans.plan3.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan3.id} %>>削除</span></div></div>
               `;
             dayplan2.insertAdjacentHTML("beforeend", HTML);
           }
@@ -123,18 +123,18 @@ const quick = () => {
             case 1:
             const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<p>・${plans.plan1.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %></p>
-              <p>・${plans.plan2.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %></p>
-              <p>・${plans.plan3.plan}<input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %></p>
+             `<div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan1.id} %> ${plans.plan1.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan1.id} %>>削除</span></div></div>
+              <div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan2.id} %> ${plans.plan2.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan2.id} %>>削除</span></div></div>
+              <div class="plan-element" ><input type="checkbox" class="achieve-check" data-id=<%= ${plans.plan3.id} %> ${plans.plan3.plan} <div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan3.id} %>>削除</span></div></div>
               `;
             dayplan.insertAdjacentHTML("beforeend", HTML);
             break;
             default:
             const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<p>・${plans.plan1.plan}</p>
-              <p>・${plans.plan2.plan}</p>
-              <p>・${plans.plan3.plan}</p>
+             `<div class="plan-element" >・${plans.plan1.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan1.id} %>>削除</span></div></div>
+              <div class="plan-element" >・${plans.plan2.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan2.id} %>>削除</span></div></div>
+              <div class="plan-element" >・${plans.plan3.plan}<div class="plan-delete"><span class="plan-delete-btn" data-id=<%= ${plans.plan3.id} %>>削除</span></div></div>
               `;
             dayplan2.insertAdjacentHTML("beforeend", HTML);
           }
