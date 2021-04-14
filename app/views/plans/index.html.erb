@@ -1,16 +1,11 @@
 <header>
-  <h2 class="blog-title">HealthInvestment</h2>
-  <% if user_signed_in? %>
-    <div class="tags">
-      <%= link_to "新規投稿", "#", class: "header-btn" %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn" %>
-    </div>
-  <% else %>
-    <div class="tags">
-      <%= link_to "ログイン", new_user_session_path, class: "header-btn" %>
-      <%= link_to "新規登録", new_user_registration_path, class: "header-btn" %>
-    </div>
-  <% end %>
+  <h2 class="app-title">HealthInvestment</h2>
+  <% unless user_signed_in? %>
+      <div class="header-btns">
+        <%= link_to "ログイン", new_user_session_path, class: "header-btn" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "header-btn" %>
+      </div>
+    <% end %>
 </header>
 
 <div class="wrapper">
@@ -21,37 +16,46 @@
       <div class="user-name">yoritomiくん</div>
       <div class="description">健康への投資の大切さに気づいて筋トレを開始！<br>無理なく始める予定。</div>
     </div>
-    <p>あなたのポイント</p>
-    <p><%= @point %>pt</p>
-    <div id="point-message">
+    
+    <div class="point-area">
+      <div class="point-head">現在のポイント</div>
+      <div class="user-point"><%= @point %> pt</div>
+      <div id="point-message"></div>
     </div>
-    <p>最長継続日数</p>
-    <p><%= @run_count %>日</p>
-    <div class="side-btns"> 
+    <div class="continuation-area">
+      <div class="continuation-head">最長継続日数</div>
+      <div class="continuation-days"><%= @run_count %>日</div>
     </div>
+    
     <div class="recommended">
-      <%= link_to '通知を見る', chart_plans_path %>
-      <p class="popular-text">＜healthinvestment偏差値＞</p>
+      <div class="link-wrapper"><%= link_to '最近の達成状況', chart_plans_path, class: "recommended-link" %></div>
+    </div>
+    
+
+    <div class="side-copy">
+      さあ、<br>
+      はじめよう。
+    </div>
+    <div class="side-image">
     </div>
   </div>
 
   <div class="main">
-  <%= flash[:notice] %>
     <div class="contents">
       <div class="upper-content">
         <%= form_with model:@plan do |f| %>
-          <%= f.label :日付を選択, class: "label" %>
-          <%= f.date_field :date %>
-          <%= f.label :予定を入力, class: "label" %>
-          <%= f.text_field :plan %>
-          <%= f.submit "保存" %>
+          <%#= f.label :日付を選択, class: "label" %>
+          <%= f.date_field :date, class: "date-input" %>
+          <%#= f.label :予定を入力, class: "label" %>
+          <%= f.text_field :plan, class: "plan-input", placeholder: "プランを入力..." %>
+          <%= f.submit "プランを保存", class: "submit-btn" %>
         <% end %>
         <div id="quick-area">
-          <div id="quick-btn">簡単予定入力</div>
+          <div id="quick-btn"><div>用意されたプランで登録</div><div class="quick-btn-description">（1週間分のメニューを登録します）</div></div>
           <ul class="more_list">
-            <li class="basic">Basicメニューで入力</li>
-            <li class="normal">Normalメニューで入力</li>
-            <li class="hard">Hardメニューで入力</li>
+            <li class="basic">Basicメニューで登録</li>
+            <li class="normal">Normalメニューで登録</li>
+            <li class="hard">Hardメニューで登録</li>
           </ul>
         </div>
       </div>
@@ -102,4 +106,9 @@
 
 <footer>
   <h4>HealthInvestment</h4>
+  <% if user_signed_in? %>
+      <div class="logout-btn">
+        <%= link_to "ログアウトする", destroy_user_session_path, method: :delete, class: "logout" %>
+      </div>
+    <% end %>
 </footer>
