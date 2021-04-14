@@ -223,7 +223,7 @@ class PlansController < ApplicationController
 
     @week_days = []
 
-    @plans = Plan.where(date: @todays_date..@todays_date + 30)
+    @plans = Plan.where(user_id: current_user.id).where(date: @todays_date..@todays_date + 30)
 
     30.times do |x|
       plans = []

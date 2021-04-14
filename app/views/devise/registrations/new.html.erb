@@ -26,6 +26,22 @@
     <%= f.text_field :nickname %>
   </div>
 
+  <div class="field">
+    <%= f.label :goal %><br />
+    <%= f.text_field :goal %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.hidden_field :registration_date, value: Date.today %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
