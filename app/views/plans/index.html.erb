@@ -14,8 +14,8 @@
   <div class="side">
     <div class="introduction">
       <%= image_tag("side.jpg", class: "introduction-image") %>
-      <div class="user-name">yoritomiくん</div>
-      <div class="description">健康への投資の大切さに気づいて筋トレを開始！<br>無理なく始める予定。</div>
+      <div class="user-name"><%= current_user.nickname %></div>
+      <div class="description"><%= current_user.goal %></div>
     </div>
     
     <div class="point-area">
