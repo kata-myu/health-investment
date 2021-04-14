@@ -166,7 +166,7 @@ li:hover {
 .content {
   /* background-color:rgb(109, 162, 173); */
   /* background-color: rgb(166, 199, 206); */
-  background-color: rgb(238, 228, 228);
+  background-color: rgb(248, 246, 246);
   height: 240px;
   width: 240px;
   /* margin: 40px 90px; */
@@ -188,7 +188,7 @@ li:hover {
   width: 220px;
 
   /* background-color:rgb(141, 188, 197); */
-  background-color: rgb(188, 215, 221);
+  background-color: rgb(201, 238, 248);
   margin-left: 10px;
   margin-top: 30px;
 }
@@ -303,7 +303,7 @@ a {
 
 /* サイドバー */
 .side {
-  background-color: rgb(186, 189, 197);
+  background-color: rgb(202, 205, 212);
   /* background-image: url("main6"); */
   /* border: solid 1px rgb(192, 187, 187); */
   width: 240px;

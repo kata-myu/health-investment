@@ -183,6 +183,11 @@ class PlansController < ApplicationController
     render json: {point: current_point}
   end
 
+  # ポイントを減らす
+  def decrease_point 
+    
+  end
+
 
   # プッシュ通知
   def push

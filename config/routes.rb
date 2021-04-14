@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get 'hard'
       get 'chart'
       get 'point'
+      get 'decrease_point'
       get 'push'
     end
   end
