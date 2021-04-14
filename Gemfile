@@ -65,3 +65,6 @@ gem 'pry-rails'
 gem 'chart-js-rails', '~> 0.1.4'
 
 gem 'gon'
+
+gem 'mini_magick'
+gem 'image_processing', '~>1.2'

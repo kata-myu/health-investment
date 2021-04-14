@@ -13,7 +13,7 @@
 
   <div class="side">
     <div class="introduction">
-      <%= image_tag("side.jpg", class: "introduction-image") %>
+      <%= image_tag current_user.image, class: "introduction-image" %>
       <div class="user-name"><%= current_user.nickname %></div>
       <div class="description"><%= current_user.goal %></div>
     </div>
