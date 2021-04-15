@@ -40,18 +40,31 @@ const quick = () => {
             case 1:
             const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan1.id}><span> ${plans.plan1.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id}>削除</span></div></div>
-              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan2.id}><span> ${plans.plan2.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id}>削除</span></div></div>
-              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan3.id}><span> ${plans.plan3.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id}>削除</span></div></div>
+             `<div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan1.id - 18}><span> ${plans.plan1.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id - 18}>削除</span></div></div>
+              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan2.id -18}><span> ${plans.plan2.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id - 18}>削除</span></div></div>
+              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan3.id -18}><span> ${plans.plan3.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id - 18}>削除</span></div></div>
               `;
             dayplan.insertAdjacentHTML("beforeend", HTML);
             break;
             default:
+              if(i == 2){
+                num = 15
+              }else if(i == 3){
+                num = 12
+              }else if(i == 4){
+                num = 9
+              }else if(i == 5){
+                num = 6
+              }else if(i == 6){
+                num = 3
+              }else if(i == 7){
+                num = 0
+              } 
             const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<div class="plan-element"><span>・${plans.plan1.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id}>削除</span></div></div>
-              <div class="plan-element"><span>・${plans.plan2.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id}>削除</span></div></div>
-              <div class="plan-element"><span>・${plans.plan3.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id}>削除</span></div></div>
+             `<div class="plan-element"><span>・${plans.plan1.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id - num}>削除</span></div></div>
+              <div class="plan-element"><span>・${plans.plan2.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id - num}>削除</span></div></div>
+              <div class="plan-element"><span>・${plans.plan3.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id - num}>削除</span></div></div>
               `;
             dayplan2.insertAdjacentHTML("beforeend", HTML);
           }
@@ -95,18 +108,31 @@ const quick = () => {
             case 1:
             const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan1.id}><span> ${plans.plan1.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id}>削除</span></div></div>
-              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan2.id}><span> ${plans.plan2.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id}>削除</span></div></div>
-              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan3.id}><span> ${plans.plan3.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id}>削除</span></div></div>
+             `<div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan1.id - 18}><span> ${plans.plan1.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id - 18}>削除</span></div></div>
+              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan2.id -18}><span> ${plans.plan2.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id - 18}>削除</span></div></div>
+              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan3.id -18}><span> ${plans.plan3.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id - 18}>削除</span></div></div>
               `;
             dayplan.insertAdjacentHTML("beforeend", HTML);
             break;
             default:
+              if(i == 2){
+                num = 15
+              }else if(i == 3){
+                num = 12
+              }else if(i == 4){
+                num = 9
+              }else if(i == 5){
+                num = 6
+              }else if(i == 6){
+                num = 3
+              }else if(i == 7){
+                num = 0
+              } 
             const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<div class="plan-element"><span>・${plans.plan1.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id}>削除</span></div></div>
-              <div class="plan-element"><span>・${plans.plan2.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id}>削除</span></div></div>
-              <div class="plan-element"><span>・${plans.plan3.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id}>削除</span></div></div>
+             `<div class="plan-element"><span>・${plans.plan1.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id - num}>削除</span></div></div>
+              <div class="plan-element"><span>・${plans.plan2.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id - num}>削除</span></div></div>
+              <div class="plan-element"><span>・${plans.plan3.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id - num}>削除</span></div></div>
               `;
             dayplan2.insertAdjacentHTML("beforeend", HTML);
           }
@@ -150,18 +176,31 @@ const quick = () => {
             case 1:
             const dayplan = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan1.id}><span> ${plans.plan1.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id}>削除</span></div></div>
-              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan2.id}><span> ${plans.plan2.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id}>削除</span></div></div>
-              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan3.id}><span> ${plans.plan3.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id}>削除</span></div></div>
+             `<div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan1.id - 18}><span> ${plans.plan1.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id - 18}>削除</span></div></div>
+              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan2.id -18}><span> ${plans.plan2.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id - 18}>削除</span></div></div>
+              <div class="plan-element"><input type="checkbox" class="achieve-check" data-id=${plans.plan3.id -18}><span> ${plans.plan3.plan}</span> <div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id - 18}>削除</span></div></div>
               `;
             dayplan.insertAdjacentHTML("beforeend", HTML);
             break;
             default:
+              if(i == 2){
+                num = 15
+              }else if(i == 3){
+                num = 12
+              }else if(i == 4){
+                num = 9
+              }else if(i == 5){
+                num = 6
+              }else if(i == 6){
+                num = 3
+              }else if(i == 7){
+                num = 0
+              } 
             const dayplan2 = document.querySelector(`.plan[data-index="${i}"]`);
             HTML = 
-             `<div class="plan-element"><span>・${plans.plan1.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id}>削除</span></div></div>
-              <div class="plan-element"><span>・${plans.plan2.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id}>削除</span></div></div>
-              <div class="plan-element"><span>・${plans.plan3.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id}>削除</span></div></div>
+             `<div class="plan-element"><span>・${plans.plan1.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan1.id - num}>削除</span></div></div>
+              <div class="plan-element"><span>・${plans.plan2.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan2.id - num}>削除</span></div></div>
+              <div class="plan-element"><span>・${plans.plan3.plan}</span><div class="plan-delete"><span class="plan-delete-btn" data-id=${plans.plan3.id - num}>削除</span></div></div>
               `;
             dayplan2.insertAdjacentHTML("beforeend", HTML);
           }
