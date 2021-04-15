@@ -6,7 +6,6 @@ class PlansController < ApplicationController
     @plan = Plan.new
 
     if user_signed_in?
-      @point = current_user.point
 
       @run_count = run_count
     end
