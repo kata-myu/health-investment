@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_14_145117) do
+ActiveRecord::Schema.define(version: 2021_04_15_083056) do
 
   create_table "achievements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 2021_04_14_145117) do
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
+  create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "point", default: 0, null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_points_on_user_id"
+  end
+
   create_table "runs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.boolean "run", null: false
     t.date "date", null: false
@@ -72,7 +80,6 @@ ActiveRecord::Schema.define(version: 2021_04_14_145117) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "point", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -81,5 +88,6 @@ ActiveRecord::Schema.define(version: 2021_04_14_145117) do
   add_foreign_key "achievements", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "plans", "users"
+  add_foreign_key "points", "users"
   add_foreign_key "runs", "users"
 end
