@@ -315,8 +315,19 @@ a {
   border-bottom: solid 1px rgb(155, 151, 151);
 }
 
+.show-area {
+
+}
+
 .user-name {
   text-align: center;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+}
+.user-name:hover {
+  color: rgb(206, 40, 40);
 }
 
 .introduction-image {

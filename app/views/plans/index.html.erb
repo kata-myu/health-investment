@@ -13,8 +13,12 @@
 
   <div class="side">
     <div class="introduction">
-      <%= image_tag current_user.image, class: "introduction-image" %>
-      <div class="user-name"><%= current_user.nickname %></div>
+      <div class="show-area">
+        <%= link_to user_path(@user.id) do %>
+          <%= image_tag current_user.image, class: "introduction-image" %> <br>
+          <div class="user-name"><%= current_user.nickname %></div>
+        <% end %>
+      </div>
       <div class="description"><%= current_user.goal %></div>
     </div>
     

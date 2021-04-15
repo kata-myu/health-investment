@@ -1,0 +1,12 @@
+<div>
+  <%= link_to "トップ", root_path %>
+  <div><%= image_tag @user.image %></div>
+  <div><%= @user.nickname %></div>
+  <div>目標</div>
+  <div><%= @user.goal %></div>
+  <div>ポイント</div>
+  <div><%= @user.point&.point %> pt</div>
+  <div>開始日</div>
+  <div><%= @user.registration_date %></div>
+  <%= link_to "ユーザー情報編集", edit_user_registration_path %>
+</div>
