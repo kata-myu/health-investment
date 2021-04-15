@@ -20,7 +20,11 @@
     
     <div class="point-area">
       <div class="point-head">現在のポイント</div>
-      <div class="user-point"><%= @point %> pt</div>
+      <% if @point %>
+        <div class="user-point"><%= @point %> pt</div>
+      <% else %>
+        <div class="user-point"><%= @point %>0 pt</div>
+      <% end %>
       <div id="point-message"></div>
     </div>
     <div class="continuation-area">
