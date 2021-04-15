@@ -176,6 +176,11 @@ li:hover {
 	transition: 0.3s;
 }
 
+.content:hover {
+  box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(209, 206, 206, 0.9);
+	transform: translateY(-8px);
+}
+
 .date {
   /* font-weight: bold; */
   font-size: 18px;
@@ -260,10 +265,7 @@ li:hover {
 } */
 
 
-.content:hover {
-  box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(209, 206, 206, 0.9);
-	transform: translateY(-8px);
-}
+
 
 
 .plan-element {
@@ -315,17 +317,30 @@ a {
   border-bottom: solid 1px rgb(155, 151, 151);
 }
 
-.user-name {
-  text-align: center;
+.show-area {
+
 }
+
 
 .introduction-image {
   height: 120px;
   width: 120px;
-  margin-left: 70px;
+  margin-left: 65px;
   margin-top: 30px;
   border-radius: 50%;
   box-shadow: var(--box-shadow);
+  transition: 0.3s;
+}
+.introduction-image:hover {
+  box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(226, 36, 36, 0.9);
+	transform: translateY(-8px);
+}
+
+.user-name {
+  text-align: center;
+  padding-top: 10px;
+  text-align: center;
+  color: black;
 }
 
 .description {

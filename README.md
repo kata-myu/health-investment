@@ -6,11 +6,13 @@
 |encrypted_password|string|null: false|
 |email|string|null: false, unique: true|
 |nickname|string|null: false, unique: true|
+|goal|string|null: false|
+|registration_date|date|null: false|
 ### Association
 - has_many :plans
 - has_many :achievements
-- has_one :point
 - has_many :runs
+- has_one :point
 
 
 ## plansテーブル
@@ -39,5 +41,14 @@
 |------|----|-------|
 |run|boolean|null: false|
 |user|references|foreign_key: true|
+### Association
+- belongs_to :user
+
+
+## pointsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|point|integer|null: false|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
