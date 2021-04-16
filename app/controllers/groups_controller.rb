@@ -1,5 +1,10 @@
 class GroupsController < ApplicationController
 
+  def index
+    @groups = Group.order('created_at DESK')
+    @user_groups = current_user.groups
+  end
+
   def new
     @group = Group.new
   end
