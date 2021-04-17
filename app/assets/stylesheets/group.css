@@ -1,0 +1,68 @@
+.group-wrapper {
+  display: flex;
+}
+
+/* サイドバー */
+.side-bar {
+  width: 200px;
+  height: 100vh;
+  background-color: royalblue;
+}
+.side-bar-header {
+  height: 100px;
+  border: solid 1px;
+}
+
+.group {
+  padding-top: 40px;
+} 
+
+
+/* グループ（中央） */
+.current-group {
+  width: 900px;
+  height: 100vh;
+  background-color: skyblue;
+}
+.current-group-header {
+  height: 100px;
+  border: solid 1px;
+}
+
+.main-heading {
+  display: flex;
+}
+
+.members {
+  display: flex;
+  margin-top: 25px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.member-box {
+  /* background-color:rgb(109, 162, 173); */
+  /* background-color: rgb(166, 199, 206); */
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: rgb(248, 246, 246);
+  height: 240px;
+  width: 240px;
+  /* margin: 40px 90px; */
+  border: solid 1px rgb(165, 162, 162);
+  /* position: relative; */
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+	transition: 0.3s;
+}
+
+
+/* チャット（右側） */
+.chat {
+  width: 320px;
+  height: 100vh;
+  background-color: green;
+}
+.chat-header {
+  height: 100px;
+  border: solid 1px;
+}

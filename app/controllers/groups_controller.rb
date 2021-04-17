@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
 
   def index
-    @groups = Group.order('created_at DESK')
     @user_groups = current_user.groups
   end
 
@@ -18,6 +17,11 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @group = Group.find(params[:id])
+    @users = @group.users
   end
 
   private
