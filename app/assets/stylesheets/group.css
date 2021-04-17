@@ -66,3 +66,23 @@
   height: 100px;
   border: solid 1px;
 }
+
+.chat-main {
+  height: calc(100vh - 100px - 100px);
+  overflow: scroll;
+}
+
+.chat-form {
+  height: 100px;
+  border: solid 1px;
+}
+.content-form {
+  height: 80px;
+  width: 250px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.content-submit {
+  font-size: 10px;
+  height: 40px;
+}

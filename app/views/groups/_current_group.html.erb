@@ -38,24 +38,27 @@
     <%= link_to "カレンダーに戻る", root_path %>
   </div>
   <div class="chat-main">
-    
-    <div class="message">
-      <div class="upper-message">
-        <div class="message-user">
-          <%= message.user.name %>
+    <% @messages.each do |message| %>
+      <div class="message">
+        <div class="upper-message">
+          <div class="message-user">
+            <%= message.user.nickname %>
+          </div>
+          <div class="message-date">
+            <%= l message.created_at %>
+          </div>
         </div>
-        <div class="message-date">
-          <%= l message.created_at %>
+        <div class="lower-message">
+          <div class="message-content">
+            <%= message.content %>
+          </div>
         </div>
       </div>
-      <div class="lower-message">
-        <div class="message-content">
-          <%= message.content %>
-        </div>
-      </div>
-    </div>
+    <% end %>
+  </div>
 
-  </div>
-  <div class="chat-form">
-  </div>
+  <%= form_with model: [@group, @message], class: "chat-form" do |f| %>
+    <%= f.text_field :content, class: "content-form", placeholder: "ここにテキストを入力..." %>
+    <%= f.submit "つぶやく", class: "content-submit" %>
+  <% end %>
 </div>

@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :plans
   has_one_attached :image
   has_one :point
+  has_many :messages
   
   
 end

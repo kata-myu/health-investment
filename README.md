@@ -13,6 +13,7 @@
 - has_many :achievements
 - has_many :runs
 - has_one :point
+- has_many :messages
 
 
 ## plansテーブル
@@ -61,6 +62,7 @@
 ### Association
 - has_many :group_users
 - has_many :users, through: :group_users
+- has_many :messages
 
 
 ## group_usersテーブル
@@ -71,3 +73,14 @@
 ### Association
 - berongs_to :group
 - belongs_to :user
+
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|string|null: false|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+### Association
+- berongs_to :user
+- berongs_to :group
