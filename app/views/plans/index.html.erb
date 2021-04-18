@@ -41,6 +41,7 @@
       はじめよう。
     </div>
     <div class="side-image">
+      <%= image_tag "side2.png", class: "side-2" %>
     </div>
   </div>
 
@@ -110,7 +111,7 @@
 </div>
 
 <footer>
-  <h4>HealthInvestment</h4>
+  <h4 class="footer-title">HealthInvestment</h4>
   <% if user_signed_in? %>
       <div class="logout-btn">
         <%= link_to "ログアウトする", destroy_user_session_path, method: :delete, class: "logout" %>
