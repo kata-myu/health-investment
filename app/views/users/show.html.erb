@@ -1,6 +1,6 @@
 <div>
   <%= link_to "トップ", root_path %>
-  <div><%= image_tag @user.image %></div>
+  <div><%= image_tag @user.image, class: "user-image" %></div>
   <div><%= @user.nickname %></div>
   <div>目標</div>
   <div><%= @user.goal %></div>
