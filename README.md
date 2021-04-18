@@ -129,6 +129,7 @@ HealthInvestment
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|promotion|string|null: false|
 #### Association
 - has_many :group_users
 - has_many :users, through: :group_users
@@ -157,7 +158,7 @@ HealthInvestment
 
 
 ## 開発環境
-ruby2.6.5
-rails6.0.0
+- ruby2.6.5
+- rails6.0.0
 
 
