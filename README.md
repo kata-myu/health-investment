@@ -16,9 +16,9 @@ HealthInvestment
 
 
 ## URL
-
+・・・
 ## テスト用アカウント
-
+・・・
 ## 利用方法
 ・ユーザー登録する。（登録済みの場合は、ログインする。）
 
@@ -48,15 +48,25 @@ HealthInvestment
 
 
 
-## 実装した機能についての画像やGIFおよびその説明
+## 実装した機能のGIF
+[![Image from Gyazo](https://i.gyazo.com/585292269fbaa874507d1f687d4d3814.gif)](https://gyazo.com/585292269fbaa874507d1f687d4d3814)
+
+
+[![Image from Gyazo](https://i.gyazo.com/a4b70f6f8f1039953868257ba7924b78.gif)](https://gyazo.com/a4b70f6f8f1039953868257ba7924b78)
+
+[![Image from Gyazo](https://i.gyazo.com/77a933d0c731bc1db5603a74a1c25952.gif)](https://gyazo.com/77a933d0c731bc1db5603a74a1c25952)
+
+[![Image from Gyazo](https://i.gyazo.com/bf704fd0167bebeb11dc91cd52ebc3ec.gif)](https://gyazo.com/bf704fd0167bebeb11dc91cd52ebc3ec)
+
+[![Image from Gyazo](https://i.gyazo.com/3564be23e04d44395e00d16bca20fd59.gif)](https://gyazo.com/3564be23e04d44395e00d16bca20fd59)
 
 
 ## 実装予定の機能
-
+・・・
 
 ## データベース設計
 
-## usersテーブル
+### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |encrypted_password|string|null: false|
@@ -64,7 +74,7 @@ HealthInvestment
 |nickname|string|null: false, unique: true|
 |goal|string|null: false|
 |registration_date|date|null: false|
-### Association
+#### Association
 - has_many :plans
 - has_many :achievements
 - has_many :runs
@@ -72,72 +82,72 @@ HealthInvestment
 - has_many :messages
 
 
-## plansテーブル
+### plansテーブル
 |Column|Type|Options|
 |------|----|-------|
 |plan|string|null: false|
 |date|date|null: false|
 |user|references|foreign_key: true|
-### Association
+#### Association
 - belongs_to :user
 - has_one :achievement
 
 
-## achievementsテーブル
+### achievementsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |plan|references|foreign_key: true|
 |user|references|foreign_key: true|
-### Association
+#### Association
 - belongs_to :plan
 - belongs_to :user
 
 
-## runsテーブル
+### runsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |run|boolean|null: false|
 |user|references|foreign_key: true|
-### Association
+#### Association
 - belongs_to :user
 
 
-## pointsテーブル
+### pointsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |point|integer|null: false|
 |user|references|null: false, foreign_key: true|
-### Association
+#### Association
 - belongs_to :user
 
 
-## groupsテーブル
+### groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-### Association
+#### Association
 - has_many :group_users
 - has_many :users, through: :group_users
 - has_many :messages
 
 
-## group_usersテーブル
+### group_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
-### Association
+#### Association
 - berongs_to :group
 - belongs_to :user
 
 
-## messagesテーブル
+### messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |content|string|null: false|
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
-### Association
+#### Association
 - berongs_to :user
 - berongs_to :group
 
