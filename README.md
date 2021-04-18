@@ -49,15 +49,19 @@ HealthInvestment
 
 
 ## 実装した機能のGIF
+#### 運動プランを保存
 [![Image from Gyazo](https://i.gyazo.com/585292269fbaa874507d1f687d4d3814.gif)](https://gyazo.com/585292269fbaa874507d1f687d4d3814)
 
-
+#### 1週間分の計画を簡単入力
 [![Image from Gyazo](https://i.gyazo.com/a4b70f6f8f1039953868257ba7924b78.gif)](https://gyazo.com/a4b70f6f8f1039953868257ba7924b78)
 
+#### 実行したプランのチェック
 [![Image from Gyazo](https://i.gyazo.com/77a933d0c731bc1db5603a74a1c25952.gif)](https://gyazo.com/77a933d0c731bc1db5603a74a1c25952)
 
+#### プランの削除
 [![Image from Gyazo](https://i.gyazo.com/bf704fd0167bebeb11dc91cd52ebc3ec.gif)](https://gyazo.com/bf704fd0167bebeb11dc91cd52ebc3ec)
 
+#### 総達成数の確認
 [![Image from Gyazo](https://i.gyazo.com/3564be23e04d44395e00d16bca20fd59.gif)](https://gyazo.com/3564be23e04d44395e00d16bca20fd59)
 
 
