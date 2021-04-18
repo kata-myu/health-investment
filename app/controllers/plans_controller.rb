@@ -12,15 +12,15 @@ class PlansController < ApplicationController
     end
 
     @run = current_user.runs.where('created_at LIKE?', "%#{Date.today}%")
-
-    
   end
 
   def create
-    if @plan = current_user.plans.create(plan_params)
+    registrated_plans = current_user.plans.where(date: Date.today)
+    if registratedplans.length <= 5
+       @plan = current_user.plans.create(plan_params)
       redirect_to action: :index
     else
-      redirect_to root_path, notice: "日付とプランを正しく入力してください！"
+      redirect_to root_path, notice: "日付とプランを正しく入力できていない、もしくはプランがすでに６こ登録されています！"
     end
   end
 

@@ -10,8 +10,12 @@ class AchievementsController < ApplicationController
     if judgment.present?
       render json: {achievement: achievement, run: false}
     elsif judgment.empty?
-      @run = Run.create(run: true, date: Date.today, user_id: current_user.id)
-      render json: {achievement: achievement, run: true}
+      if Run.find_by(date: Date.today) == nil
+        @run = Run.create(run: true, date: Date.today, user_id: current_user.id)
+        render json: {achievement: achievement, run: true}
+      else
+        render json: {achievement: achievement, run: true}
+      end
     end
     
   end
