@@ -15,12 +15,12 @@ class PlansController < ApplicationController
   end
 
   def create
-    registrated_plans = current_user.plans.where(date: Date.today)
-    if registratedplans.length <= 5
+    registrated_plans = current_user.plans.where(date: params[:plan][:date])
+    if registrated_plans.length <= 5
        @plan = current_user.plans.create(plan_params)
       redirect_to action: :index
     else
-      redirect_to root_path, notice: "日付とプランを正しく入力できていない、もしくはプランがすでに６こ登録されています！"
+      redirect_to root_path, notice: "１日に登録できるプランの数は６つまでです！"
     end
   end
 
