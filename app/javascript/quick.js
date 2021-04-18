@@ -1,10 +1,10 @@
 const quick = () => {
   // ホバーするとボタンが出る
   const quickArea = document.getElementById("quick-area");
-  if (quickArea.getAttribute("data-load") != null){
+  if (quickArea && quickArea.getAttribute("data-load") != null){
     return null;
   }
-  quickArea.setAttribute("data-load", "true");
+  if (quickArea){quickArea.setAttribute("data-load", "true");}
 
   if (quickArea){
     quickArea.addEventListener("mouseover", () => {
@@ -19,10 +19,10 @@ const quick = () => {
 
 
   const basic = document.querySelector(".basic");
-  if (basic.getAttribute("data-load") != null){
+  if (basic && basic.getAttribute("data-load") != null){
     return null;
   }
-  basic.setAttribute("data-load", "true");
+  if(basic){basic.setAttribute("data-load", "true");}
 
   if (basic) {
   basic.addEventListener("click", () => {
@@ -87,10 +87,10 @@ const quick = () => {
 
 
   const normal = document.querySelector(".normal");
-  if (normal.getAttribute("data-load") != null){
+  if (normal && normal.getAttribute("data-load") != null){
     return null;
   }
-  normal.setAttribute("data-load", "true");
+  if(normal){normal.setAttribute("data-load", "true");}
 
   if (normal) {
   normal.addEventListener("click", () => {
@@ -155,10 +155,10 @@ const quick = () => {
 
 
   const hard = document.querySelector(".hard");
-  if (hard.getAttribute("data-load") != null){
+  if (hard && hard.getAttribute("data-load") != null){
     return null;
   }
-  hard.setAttribute("data-load", "true");
+  if(hard){hard.setAttribute("data-load", "true");}
 
   if (hard) {
   hard.addEventListener("click", () => {

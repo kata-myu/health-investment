@@ -11,13 +11,13 @@ class PlansController < ApplicationController
       @run_count = run_count
     end
 
-    @run = Run.where('created_at LIKE?', "%#{Date.today}%")
+    @run = current_user.runs.where('created_at LIKE?', "%#{Date.today}%")
 
     
   end
 
   def create
-    if @plan = Plan.create(plan_params)
+    if @plan = current_user.plans.create(plan_params)
       redirect_to action: :index
     else
       redirect_to root_path, notice: "日付とプランを正しく入力してください！"
@@ -25,7 +25,7 @@ class PlansController < ApplicationController
   end
 
   def destroy
-    plan = Plan.find(params[:id])
+    plan = current_user.plans.find(params[:id])
     if plan.destroy
       render json:{plan: plan}
     else
@@ -39,7 +39,7 @@ class PlansController < ApplicationController
   def basic 
     plans = {}
     7.times do |x|
-      pre_plans = Plan.where(date: (Date.today + x))
+      pre_plans = current_user.plans.where(date: (Date.today + x))
       if pre_plans.length <= 4
         plan1 = Plan.create(plan: "ウォーキング20分", date: (Date.today + x), user_id: current_user.id)
         plan2 = Plan.create(plan: "腕立て伏せ15回", date: (Date.today + x), user_id: current_user.id)
@@ -56,7 +56,7 @@ class PlansController < ApplicationController
   def normal 
     plans = {}
     7.times do |x|
-      pre_plans = Plan.where(date: (Date.today + x))
+      pre_plans = current_user.plans.where(date: (Date.today + x))
       if pre_plans.length <= 4
         plan1 = Plan.create(plan: "ランニング20分", date: (Date.today + x), user_id: current_user.id)
         plan2 = Plan.create(plan: "腕立て伏せ30回", date: (Date.today + x), user_id: current_user.id)
@@ -73,7 +73,7 @@ class PlansController < ApplicationController
   def hard 
     plans = {}
     7.times do |x|
-      pre_plans = Plan.where(date: (Date.today + x))
+      pre_plans = current_user.plans.where(date: (Date.today + x))
       if pre_plans.length <= 4
         plan1 = Plan.create(plan: "ランニング40分", date: (Date.today + x), user_id: current_user.id)
         plan2 = Plan.create(plan: "腕立て伏せ60回", date: (Date.today + x), user_id: current_user.id)
@@ -225,7 +225,7 @@ class PlansController < ApplicationController
       plans = current_user.plans
       day_plans = plans.select{ |plan| plan.date == Date.today }
       achieve_plans = day_plans.select{ |plan| plan.achievement == nil }
-      binding.pry
+
       if achieve_plans.empty?
         render json: {achieve: "ok"}
       else

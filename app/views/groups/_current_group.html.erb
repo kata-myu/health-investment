@@ -1,0 +1,64 @@
+<div class="current-group">
+  <div class="current-group-header">
+    <%= @group.name %>
+    <%= "このグループをぬける" %>
+  </div>
+  <div class="current-group-main">
+    <div class="main-heading">
+      <div>本日の予定</div>
+      <div>達成者  3人</div>
+    </div>
+    <div class="members">
+      <% @users.each do |user| %>
+        <div class="member-box">
+          <div class="member">
+            <div class="member-name"><%= user.nickname %></div>
+            <div class="run-status">
+              <% if user.runs.find_by(date: Date.today) == nil %>
+                <div>未達</div>
+              <% else %>
+                <div>達成</div>
+              <% end %>
+            </div>
+          </div>
+          <div class="member-plan">
+            <% user.plans.where(date: Date.today).each do |plan| %>
+              <div>・<%= plan.plan %></div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="chat">
+  <div class="chat-header">
+    <%= link_to "カレンダーに戻る", root_path %>
+  </div>
+  <div class="chat-main">
+    <% @messages.each do |message| %>
+      <div class="message">
+        <div class="upper-message">
+          <div class="message-user">
+            <%= message.user.nickname %>
+          </div>
+          <div class="message-date">
+            <%= l message.created_at %>
+          </div>
+        </div>
+        <div class="lower-message">
+          <div class="message-content">
+            <%= message.content %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= form_with model: [@group, @message], class: "chat-form" do |f| %>
+    <%= f.text_area :content, class: "content-form", placeholder: "ここにテキストを入力..." %>
+    <%= f.submit "つぶやく", class: "content-submit" %>
+  <% end %>
+</div>

@@ -77,7 +77,7 @@ header {
   margin-left: 50px;
 }
 
-form {
+.calender-form {
   margin-top: 25px;
   margin-left: 60px;
 }
@@ -391,14 +391,14 @@ a {
 }
 
 .link-wrapper {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 
 .recommended-link {
   box-shadow: var(--box-shadow);
   transition: 0.3s;
-  padding: 24px;
+  padding: 8px;
   font-size: 18px;
   color: black;
   border:solid 1px gray;
@@ -413,6 +413,27 @@ a {
     inset 0 -1px 0 rgba(255, 255, 255, 0.2); */
 }
 .recommended-link:hover {
+  box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(226, 36, 36, 0.9);
+	transform: translateY(-8px);
+}
+
+.groups-wrapper {
+  padding-top: 60px;
+}
+
+.groups-link {
+  box-shadow: var(--box-shadow);
+  transition: 0.3s;
+  padding: 8px;
+  font-size: 18px;
+  color: black;
+  border:solid 1px gray;
+  border-style: outset;
+  border-image: initial;
+  background-color: rgb(239, 239, 239);
+  border-radius: 5px;
+}
+.groups-link:hover {
   box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(226, 36, 36, 0.9);
 	transform: translateY(-8px);
 }

@@ -1,0 +1,7 @@
+<div>
+  <%= form_with model: @group, local: true do |f| %>
+    <%= f.label :グループ名 %>
+    <%= f.text_field :name, placeholder: "グループ名を入力..." %>
+    <%= f.submit %>
+  <% end %>
+</div>
