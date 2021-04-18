@@ -58,7 +58,7 @@
 
 /* チャット（右側） */
 .chat {
-  width: 320px;
+  width: 340px;
   height: 100vh;
   background-color: green;
 }
@@ -83,6 +83,6 @@
   margin-top: 10px;
 }
 .content-submit {
-  font-size: 10px;
-  height: 40px;
+  font-size: 12px;
+  margin-left: 10px;
 }
