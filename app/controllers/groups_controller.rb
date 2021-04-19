@@ -26,6 +26,10 @@ class GroupsController < ApplicationController
     @messages = @group.messages.includes(:user)
   end
 
+  def search_group
+    @groups = Group.all
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, :promotion)
