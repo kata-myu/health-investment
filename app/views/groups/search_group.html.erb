@@ -2,10 +2,10 @@
   <%= link_to "戻る", groups_path %>
   <div>グループに参加しましょう！</div>
   <% @groups.each do |group| %>
-    <div>
-      <div><%= group.name %></div>
+    <div class="group-area">
+      <div><%= link_to "このグループに参加する", join_group_group_path(group.id), method: :post %></div>
+      <div><%= group.name %> メンバー数: <%= group.users.length %>人</div>
       <div><%= group.promotion %></div>
-      <div>メンバー数: <%= group.users.length %>人</div>
     </div>
   <% end %>
 </div>

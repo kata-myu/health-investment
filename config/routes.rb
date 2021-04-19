@@ -20,5 +20,9 @@ Rails.application.routes.draw do
     collection do
       get 'search-group'
     end
+    member do 
+      post 'join-group'
+      delete 'leave-group'
+    end
   end
 end

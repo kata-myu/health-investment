@@ -86,3 +86,11 @@
   font-size: 12px;
   margin-left: 10px;
 }
+
+
+/* グループ一覧ページ */
+
+.group-area {
+  margin-top: 20px;
+  border: solid 1px;
+}

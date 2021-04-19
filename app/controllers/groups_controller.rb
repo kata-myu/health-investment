@@ -30,6 +30,17 @@ class GroupsController < ApplicationController
     @groups = Group.all
   end
 
+  def join_group
+    GroupUser.create(group_id: params[:id], user_id: current_user.id)
+    redirect_to group_path(params[:id])
+  end
+
+  def leave_group
+    group_user = GroupUser.find_by(group_id: params[:id], user_id: current_user.id)
+    group_user.destroy
+    redirect_to groups_path
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, :promotion)
