@@ -50,7 +50,7 @@
         </div>
         <div class="lower-message">
           <div class="message-content">
-            <%= message.content %>
+            <%= safe_join(message.content.split("\n"),tag(:br)) %>
           </div>
         </div>
       </div>
