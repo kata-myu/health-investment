@@ -17,5 +17,12 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :groups, only: [:index, :new, :create, :show] do
     resources :messages, only: [:create, :destroy]
+    collection do
+      get 'search-group'
+    end
+    member do 
+      post 'join-group'
+      delete 'leave-group'
+    end
   end
 end

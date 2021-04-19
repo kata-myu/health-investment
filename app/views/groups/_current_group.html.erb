@@ -1,7 +1,7 @@
 <div class="current-group">
   <div class="current-group-header">
     <%= @group.name %>
-    <%= "このグループをぬける" %>
+    <%= link_to "このグループをぬける", leave_group_group_path(@group), method: :delete %>
   </div>
   <div class="current-group-main">
     <div class="main-heading">
@@ -50,7 +50,7 @@
         </div>
         <div class="lower-message">
           <div class="message-content">
-            <%= message.content %>
+            <%= safe_join(message.content.split("\n"),tag(:br)) %>
           </div>
         </div>
       </div>
