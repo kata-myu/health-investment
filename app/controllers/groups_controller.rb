@@ -26,9 +26,14 @@ class GroupsController < ApplicationController
     @messages = @group.messages.includes(:user)
   end
 
+  
   def search_group
-    @groups = Group.all
+    @groups = Group.all.includes(:users)
+
+    @p = Group.ransack(params[:q])
+    @groups = @p.result.includes(:users)
   end
+
 
   def join_group
     GroupUser.create(group_id: params[:id], user_id: current_user.id)
@@ -40,6 +45,7 @@ class GroupsController < ApplicationController
     group_user.destroy
     redirect_to groups_path
   end
+
 
   private
   def group_params
