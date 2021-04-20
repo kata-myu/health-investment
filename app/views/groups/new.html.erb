@@ -1,4 +1,8 @@
 <div>
+<%= link_to "カレンダーへ", root_path %>
+<%= link_to "グループ検索へ", search_group_groups_path %>
+</div>
+<div>
   <%= form_with model: @group, local: true do |f| %>
     <%= f.label :グループ名 %>
     <%= f.text_field :name, placeholder: "グループ名を入力..." %>

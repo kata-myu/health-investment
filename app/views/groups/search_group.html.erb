@@ -1,11 +1,24 @@
 <div>
   <%= link_to "戻る", groups_path %>
+  <%= link_to "グループをつくる", new_group_path %>
   <div>グループに参加しましょう！</div>
-  <% @groups.each do |group| %>
-    <div class="group-area">
-      <div><%= link_to "このグループに参加する", join_group_group_path(group.id), method: :post %></div>
-      <div><%= group.name %> メンバー数: <%= group.users.length %>人</div>
-      <div><%= group.promotion %></div>
-    </div>
+  <div>グループを検索</div>
+  <%= search_form_for @p, url: search_group_groups_path do |f| %>
+    <%= f.label :name_cont, "グループ名" %>
+    <%= f.text_field :name_cont %>
+    <%= f.label :promotion_cont, "キーワード" %>
+    <%= f.text_field :promotion_cont %>
+    <%= f.submit "検索" %>
+  <% end %>
+  <% if @groups.present? %>
+    <% @groups.each do |group| %>
+      <div class="group-area">
+        <div><%= link_to "このグループに参加する", join_group_group_path(group.id), method: :post %></div>
+        <div><%= group.name %> メンバー数: <%= group.users.length %>人</div>
+        <div><%= group.promotion %></div>
+      </div>
+    <% end %>
+  <% else %>
+    <div>該当するグループはありません。</div>
   <% end %>
 </div>
