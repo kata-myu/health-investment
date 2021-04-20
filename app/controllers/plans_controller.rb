@@ -40,7 +40,7 @@ class PlansController < ApplicationController
     plans = {}
     7.times do |x|
       pre_plans = current_user.plans.where(date: (Date.today + x))
-      if pre_plans.length <= 4
+      if pre_plans.length <= 3
         plan1 = Plan.create(plan: "ウォーキング20分", date: (Date.today + x), user_id: current_user.id)
         plan2 = Plan.create(plan: "腕立て伏せ15回", date: (Date.today + x), user_id: current_user.id)
         plan3 = Plan.create(plan: "腹筋15回", date: (Date.today + x), user_id: current_user.id)
@@ -57,7 +57,7 @@ class PlansController < ApplicationController
     plans = {}
     7.times do |x|
       pre_plans = current_user.plans.where(date: (Date.today + x))
-      if pre_plans.length <= 4
+      if pre_plans.length <= 3
         plan1 = Plan.create(plan: "ランニング20分", date: (Date.today + x), user_id: current_user.id)
         plan2 = Plan.create(plan: "腕立て伏せ30回", date: (Date.today + x), user_id: current_user.id)
         plan3 = Plan.create(plan: "腹筋30回", date: (Date.today + x), user_id: current_user.id)
@@ -74,7 +74,7 @@ class PlansController < ApplicationController
     plans = {}
     7.times do |x|
       pre_plans = current_user.plans.where(date: (Date.today + x))
-      if pre_plans.length <= 4
+      if pre_plans.length <= 3
         plan1 = Plan.create(plan: "ランニング40分", date: (Date.today + x), user_id: current_user.id)
         plan2 = Plan.create(plan: "腕立て伏せ60回", date: (Date.today + x), user_id: current_user.id)
         plan3 = Plan.create(plan: "腹筋60回", date: (Date.today + x), user_id: current_user.id)
