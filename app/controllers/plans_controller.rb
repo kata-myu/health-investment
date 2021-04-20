@@ -1,17 +1,20 @@
 class PlansController < ApplicationController
   protect_from_forgery except: :destroy
+
+  include PointActions
+  include QuickActions
+  before_action :quick_plan, only: [:basic, :normal, :hard]
+
   
   def index
     get_week
     @plan = Plan.new
-
     if user_signed_in?
       @user = current_user
       @point = current_user.point&.point
       @run_count = run_count
     end
-
-    @run = current_user.runs.where('created_at LIKE?', "%#{Date.today}%")
+    # @run = current_user.runs.where('created_at LIKE?', "%#{Date.today}%")
   end
 
   def create
@@ -37,61 +40,18 @@ class PlansController < ApplicationController
   # 簡単登録
 
   def basic 
-    plans = {}
-    7.times do |x|
-      pre_plans = current_user.plans.where(date: (Date.today + x))
-      if pre_plans.length <= 4
-        plan1 = Plan.create(plan: "ウォーキング20分", date: (Date.today + x), user_id: current_user.id)
-        plan2 = Plan.create(plan: "腕立て伏せ15回", date: (Date.today + x), user_id: current_user.id)
-        plan3 = Plan.create(plan: "腹筋15回", date: (Date.today + x), user_id: current_user.id)
-        plans = {plan1: plan1, plan2: plan2, plan3: plan3}
-      else
-        render json: {plans: {}}
-        return 
-      end
-    end
-    render json: {plans: plans}
   end
 
   def normal 
-    plans = {}
-    7.times do |x|
-      pre_plans = current_user.plans.where(date: (Date.today + x))
-      if pre_plans.length <= 4
-        plan1 = Plan.create(plan: "ランニング20分", date: (Date.today + x), user_id: current_user.id)
-        plan2 = Plan.create(plan: "腕立て伏せ30回", date: (Date.today + x), user_id: current_user.id)
-        plan3 = Plan.create(plan: "腹筋30回", date: (Date.today + x), user_id: current_user.id)
-        plans = {plan1: plan1, plan2: plan2, plan3: plan3}
-      else
-        render json: {plans: {}}
-        return 
-      end
-    end
-    render json: {plans: plans}
   end
 
   def hard 
-    plans = {}
-    7.times do |x|
-      pre_plans = current_user.plans.where(date: (Date.today + x))
-      if pre_plans.length <= 4
-        plan1 = Plan.create(plan: "ランニング40分", date: (Date.today + x), user_id: current_user.id)
-        plan2 = Plan.create(plan: "腕立て伏せ60回", date: (Date.today + x), user_id: current_user.id)
-        plan3 = Plan.create(plan: "腹筋60回", date: (Date.today + x), user_id: current_user.id)
-        plans = {plan1: plan1, plan2: plan2, plan3: plan3}
-      else
-        render json: {plans: {}}
-        return 
-      end
-    end
-    render json: {plans: plans}
   end
 
 
   # プラン達成数グラフ
   def chart 
     plans = current_user.plans
-
     @day = Date.today
     
     achievements = []
@@ -119,6 +79,7 @@ class PlansController < ApplicationController
     end
     gon.days = @days.reverse
 
+    # ↓現状ポイントを表示する記述になっていないと思われる
     @points = []
     7.times do |x|
       today = Date.today
@@ -131,89 +92,12 @@ class PlansController < ApplicationController
 
   # ポイント付与
   def point 
-    pre_point = current_user.point.point
-
-    user_point = 0
-    users = User.all
-
-    users.each do |user|
-      if user.runs.length > 100
-        user_point = user.point.point + 3
-        user.point.update(point: user_point)
-      elsif user.runs.length > 30
-        user_point = user.point.point + 2
-        user.point.update(point: user_point)
-      elsif user.runs.length > 10
-        user_point = user.point.point + 1
-        user.point.update(point: user_point)
-      else
-        user_point = user_point 
-      end
-    end
-
-    users.each do |user|
-      if user.achievements.length > 1000
-        user_point = user.point.point + 5
-        user.point.update(point: user_point)
-      elsif user.achievements.length > 500
-        user_point = user.point.point + 4
-        user.point.update(point: user_point)
-      elsif user.achievements.length > 100
-        user_point = user.point.point + 3
-        user.point.update(point: user_point)
-      elsif user.achievements.length > 50
-        user_point = user.point.point + 2
-        user.point.update(point: user_point)
-      elsif user.achievements.length > 20
-        user_point = user.point.point + 1
-        user.point.update(point: user_point)
-      elsif user.achievements.length > 7
-        user_point = user.point.point + 0.5
-        user.point.update(point: user_point)
-      elsif user.achievements.length > 3
-        user_point = user.point.point + 0.2
-        user.point.update(point: user_point)
-      else
-        user_point = user_point
-      end 
-    end
-
-    current_point = current_user.point.point - pre_point
-
-    render json: {point: current_point}
+    increase
   end
 
   # ポイントを減らす
   def decrease_point 
-    users = User.all
-    today = Date.today
-
-    users.each do |user|
-      if (today - 200) > user.registration_date
-        user_point = user.point.point - 2.4
-        user.point.update(point: user_point)
-      elsif (today - 100) > user.registration_date
-        user_point = user.point.point - 1.8
-        user.point.update(point: user_point)
-      elsif (today - 50) > user.registration_date
-        user_point = user.point.point - 1.2
-        user.point.update(point: user_point)
-      elsif (today - 40) > user.registration_date
-        user_point = user.point.point - 0.6
-        user.point.update(point: user_point)
-      elsif (today - 30) > user.registration_date
-        user_point = user.point.point - 0.3
-        user.point.update(point: user_point)
-      elsif (today - 7) > user.registration_date
-        user_point = user.point.point - 0.2
-        user.point.update(point: user_point)
-      else
-        user_point = user.user.point.point
-      end
-    end
-
-    current_point = current_user.point.point
-    render json: {point: current_point}
+    decrease
   end
 
 
@@ -235,14 +119,15 @@ class PlansController < ApplicationController
     else
       render json: {achieve: "not login"}
     end
-
   end
 
 
   private
+
   def plan_params
     params.require(:plan).permit(:plan, :date).merge(user_id: current_user.id)
   end
+
 
   def get_week
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
@@ -298,5 +183,4 @@ class PlansController < ApplicationController
     end
   end
   
-
 end
