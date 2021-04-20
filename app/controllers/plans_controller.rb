@@ -1,9 +1,10 @@
 class PlansController < ApplicationController
-  protect_from_forgery except: :destroy
 
   include PointActions
   include QuickActions
   before_action :quick_plan, only: [:basic, :normal, :hard]
+
+  protect_from_forgery except: :destroy
 
   
   def index
