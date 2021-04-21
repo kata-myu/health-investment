@@ -15,6 +15,7 @@ require("../point")
 require("../push")
 require("../plandelete")
 require("../decreasepoint")
+require("../notification")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
