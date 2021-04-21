@@ -49,7 +49,7 @@ const checkTime = () => {
     }
   };
 
-  setInterval(pointTime, 100000);
+  setInterval(pointTime, 10000);
 };
 
 window.addEventListener("load", checkTime);

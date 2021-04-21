@@ -2,12 +2,14 @@ module PointActions
   extend ActiveSupport::Concern
 
   def increase
-    pre_point = current_user.point.point
 
-    user_point = 0
     users = User.all
 
     users.each do |user|
+      if user.point == nil
+        Point.create(point: 0, user_id: user.id)
+      end
+
       if user.runs.length > 100
         user_point = user.point.point + 3
         user.point.update(point: user_point)
@@ -49,6 +51,7 @@ module PointActions
       end 
     end
 
+    pre_point = current_user.point.point
     current_point = current_user.point.point - pre_point
 
     render json: {point: current_point}
@@ -60,6 +63,10 @@ module PointActions
     today = Date.today
 
     users.each do |user|
+      if user.point == nil
+        user.point.create(point: 0, user_id: user.id)
+      end
+
       if (today - 200) > user.registration_date
         user_point = user.point.point - 2.4
         user.point.update(point: user_point)
