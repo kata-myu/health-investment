@@ -52,6 +52,7 @@ class PlansController < ApplicationController
 
   # プラン達成数グラフ
   def chart 
+    #総達成数を取得
     plans = current_user.plans
     @day = Date.today
     
@@ -80,14 +81,28 @@ class PlansController < ApplicationController
     end
     gon.days = @days.reverse
 
-    # ↓現状ポイントを表示する記述になっていないと思われる
-    @points = []
+
+    #１周間の継続日数を取得
+    runs_numbers = []
+    registration_date = current_user.registration_date
+    today = Date.today
+    date_range = [*(registration_date..today)]
+
     7.times do |x|
-      today = Date.today
-      point = User.where('created_at LIKE?', "%#{today - x}%")
-      @points.push(point)
+      count = 0
+      date_range.each do |date|
+        if current_user.runs.find_by(date: date).present?
+          count += 1
+        else
+          count = 0
+        end
+      end
+      runs_numbers.push(count)
+      date_range.delete_at(-1)
     end
-    gon.point = @points.reverse
+
+    gon.runs = runs_numbers.reverse
+    
   end
 
 
