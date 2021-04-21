@@ -13,7 +13,11 @@
         <% end %>
         <div class="user-name"><%= current_user.nickname %></div>
       </div>
-      <div class="description"><%= current_user.goal %></div>
+      <% if current_user.goal.present? %>
+        <div class="description"><%= current_user.goal %></div>
+      <% else %>
+        <div class="description">目標は設定されていません。</div>
+      <% end %>
     </div>
     
     <div class="point-area">
