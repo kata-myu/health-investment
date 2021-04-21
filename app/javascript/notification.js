@@ -19,7 +19,7 @@ const notificationAction = () =>{
       .then((permission) => {
         if (permission == 'granted') {
           // 許可
-          const n = Notification("リマインドです");
+          const n = new Notification("リマインドです");
           
         } else if (permission == 'denied') {
           // 拒否
