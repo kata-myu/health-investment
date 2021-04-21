@@ -1,22 +1,22 @@
 class PlansController < ApplicationController
-
   include PointActions
   include QuickActions
-  before_action :quick_plan, only: [:basic, :normal, :hard]
+  include Chart
+  include Push
 
+  before_action :quick_plan, only: [:basic, :normal, :hard]
   protect_from_forgery except: :destroy
 
   
   def index
     get_week
+
     @plan = Plan.new
-    if user_signed_in?
-      @user = current_user
-      @point = current_user.point&.point
-      @run_count = run_count
-    end
-    # @run = current_user.runs.where('created_at LIKE?', "%#{Date.today}%")
+    @point = current_user.point&.point
+
+    @run_count = run_count #モジュールから呼び出し
   end
+
 
   def create
     registrated_plans = current_user.plans.where(date: params[:plan][:date])
@@ -27,6 +27,7 @@ class PlansController < ApplicationController
       redirect_to root_path, notice: "１日に登録できるプランの数は６つまでです！"
     end
   end
+
 
   def destroy
     plan = current_user.plans.find(params[:id])
@@ -39,7 +40,6 @@ class PlansController < ApplicationController
 
 
   # 簡単登録
-
   def basic 
   end
 
@@ -52,57 +52,7 @@ class PlansController < ApplicationController
 
   # プラン達成数グラフ
   def chart 
-    #総達成数を取得
-    plans = current_user.plans
-    @day = Date.today
-    
-    achievements = []
-    plans.each do |plan|
-      if plan.achievement.present?
-        achievements.push(plan)
-      end
-    end
-    achievements_amount = []
-    achievement_num = achievements.length
-    7.times do |x|
-      if x != 0 
-        day_achieve = Achievement.where(date: Date.today - (x - 1)).where(user_id: current_user.id)
-        day_num = day_achieve.length
-        achievement_num = achievement_num - day_num
-      end
-      achievements_amount.push(achievement_num)
-    end
-    gon.achievements_array = achievements_amount.reverse
-
-   
-    @days = []
-    7.times do |x|
-      @days.push(@day - x)
-    end
-    gon.days = @days.reverse
-
-
-    #１周間の継続日数を取得
-    runs_numbers = []
-    registration_date = current_user.registration_date
-    today = Date.today
-    date_range = [*(registration_date..today)]
-
-    7.times do |x|
-      count = 0
-      date_range.each do |date|
-        if current_user.runs.find_by(date: date).present?
-          count += 1
-        else
-          count = 0
-        end
-      end
-      runs_numbers.push(count)
-      date_range.delete_at(-1)
-    end
-
-    gon.runs = runs_numbers.reverse
-    
+    chart_data
   end
 
 
@@ -119,25 +69,11 @@ class PlansController < ApplicationController
 
   # プッシュ通知
   def push
-    date = Date.today
-
-    if user_signed_in?
-      plans = current_user.plans
-      day_plans = plans.select{ |plan| plan.date == Date.today }
-      achieve_plans = day_plans.select{ |plan| plan.achievement == nil }
-
-      if achieve_plans.empty?
-        render json: {achieve: "ok"}
-      else
-        render json: {achieve: "no"}
-      end
-
-    else
-      render json: {achieve: "not login"}
-    end
+    push_action
   end
 
 
+  
   private
 
   def plan_params
@@ -165,37 +101,6 @@ class PlansController < ApplicationController
 
       days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, wday: wdays[wday_num], :plans => plans}
       @week_days.push(days)
-    end
-  end
-
-
-  # 継続日数を算出する
-  def run_count
-    count = 0
-    @runs_a = []
-    @days_a = []
-
-    @days = []
-    @runs = current_user.runs
-    @runs.each do |run| 
-      @days.push(run.date)
-    end
-
-    @days.each do |day|
-      @days_a.push(day)
-      count = count + 1
-      if @days_a.length >= 2
-        if @days_a[-2] != @days_a[-1] - 1
-          @runs_a.push(count - 1)
-          count = 1
-        end
-      end
-    end
-
-    if @runs_a.length == 0
-      return @days_a.length
-    else
-      return @runs_a.max
     end
   end
   
