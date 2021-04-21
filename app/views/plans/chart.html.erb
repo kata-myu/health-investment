@@ -12,13 +12,13 @@
       labels: gon.days,
       datasets: [
         {
+          label: '継続日数',
+          data: gon.runs,
+          backgroundColor: "rgba(130,201,169,0.5)"
+        },{
           label: 'プランの総達成回数',
           data: gon.achievements_array,
           backgroundColor: "rgba(219,39,91,0.5)"
-        },{
-          label: '保持しているポイント',
-          data: gon.days,
-          backgroundColor: "rgba(130,201,169,0.5)"
         }
       ]
     },
@@ -30,11 +30,11 @@
       scales: {
         yAxes: [{
           ticks: {
-            suggestedMax: 100,
+            suggestedMax: 300,
             suggestedMin: 0,
-            stepSize: 10,
+            stepSize: 30,
             callback: function(value, index, values){
-              return  value +  '回'
+              return  value +  ''
             }
           }
         }]
