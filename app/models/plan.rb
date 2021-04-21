@@ -1,6 +1,4 @@
 class Plan < ApplicationRecord
-  
-
   has_one :achievement, dependent: :destroy
   belongs_to :user
 
