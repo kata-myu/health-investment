@@ -2,11 +2,11 @@ module QuickActions
   extend ActiveSupport::Concern
 
   def quick_plan
-    if params[:action] = "basic"
+    if params[:action] == "basic"
       menu1 = "ウォーキング20分"
       menu2 = "腕立て伏せ15回"
       menu3 = "腹筋15回"
-    elsif params[:action] = "normal"
+    elsif params[:action] == "normal"
       menu1 = "ランニング20分"
       menu2 = "腕立て伏せ30回"
       menu3 = "腹筋30回"
