@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true, length: { maximum: 20 }
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i, message: "Include both letters and numbers"}
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i, message: "Include both letters and numbers"}
 
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users
@@ -15,6 +15,5 @@ class User < ApplicationRecord
   has_one_attached :image
   has_one :point
   has_many :messages
-  
   
 end

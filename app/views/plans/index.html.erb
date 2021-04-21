@@ -8,12 +8,16 @@
   <div class="side">
     <div class="introduction">
       <div class="show-area">
-        <%= link_to user_path(@user.id) do %>
+        <%= link_to user_path(current_user.id) do %>
           <%= image_tag current_user.image, class: "introduction-image" %> <br>
         <% end %>
         <div class="user-name"><%= current_user.nickname %></div>
       </div>
-      <div class="description"><%= current_user.goal %></div>
+      <% if current_user.goal.present? %>
+        <div class="description"><%= current_user.goal %></div>
+      <% else %>
+        <div class="description">目標は設定されていません。</div>
+      <% end %>
     </div>
     
     <div class="point-area">
