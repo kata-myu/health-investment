@@ -3,6 +3,7 @@ class PlansController < ApplicationController
   include QuickActions
   include Chart
   include Push
+  include RunCount
 
   before_action :quick_plan, only: [:basic, :normal, :hard]
   protect_from_forgery except: :destroy
@@ -73,7 +74,7 @@ class PlansController < ApplicationController
   end
 
 
-  
+
   private
 
   def plan_params
