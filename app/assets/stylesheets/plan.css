@@ -4,7 +4,8 @@ header {
   /* background-image: url("head1"); */
   /* background-size: 480 230; */
   /* background-repeat: no-repeat; */
-  background-color: rgb(108, 109, 112);
+  /* background-color: rgb(230, 230, 233); */
+  border-bottom: double 3px rgb(170, 168, 168);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,13 +13,12 @@ header {
 }
 
 .app-title {
-  font-size: 30px;
+  font-size: 35px;
   /* font-weight: bold; */
-  margin-left: 10px;
-  /* color: black;
-  text-shadow: 2px 2px 2px #535151; */
-  text-shadow: 3px 3px 3px #302b2b;
-  color: #ebe7e7;
+  margin-left: 80px;
+  /* color: black;*/
+  text-shadow: 1px 1px 1px #302b2b;
+  color: #afacac;
   /* box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
     inset 1px 0 0 rgba(255, 255, 255, 0.3),
@@ -26,11 +26,39 @@ header {
     inset 0 -1px 0 rgba(255, 255, 255, 0.2); */
 }
 
+.header-right {
+  display: flex;
+  margin-top: 5px;
+  margin-right: 40px;
+}
+
+.instagram-icon {
+  font-size: 2.5em;
+  margin-right: 20px;
+  margin-top: 5px;
+  color: rgb(241, 74, 241);
+}
+
+.facebook-icon {
+  font-size: 2.5em;
+  margin-right: 20px;
+  margin-top: 5px;
+  color: #4d8cf1;
+}
+
+.twitter-icon {
+  font-size: 2.5em;
+  margin-right: 20px;
+  margin-top: 5px;
+  color: #75A9FF;
+}
+
 .header-icon {
   height: 50px;
   width: 50px;
   text-align: right;
   margin-right: 20px;
+  margin-left: 30px;
   border-radius: 50%;
 }
 
@@ -40,7 +68,7 @@ header {
   /* height: calc(100vh - 200px); */
   /* background-image: url("main6"); */
   /* background-size: 100%; */
-  background-color:rgb(184, 182, 182);
+  background-color:rgb(228, 225, 225);
   height: 1574px;
   display: flex;
 }
@@ -145,6 +173,29 @@ li {
 li:hover {
   color: rgb(214, 26, 26);
 }
+
+.achieve-done {
+  background-color: rgb(247, 247, 115);
+}
+
+.instagram-icon2 {
+  font-size: 2em;
+  margin-left: 10px;
+  color: rgb(236, 65, 236);
+}
+
+.facebook-icon2 {
+  font-size: 2em;
+  margin-left: 10px;
+  color: #4083f0;
+}
+
+.twitter-icon2 {
+  font-size: 2em;
+  margin-left: 10px;
+  color: #659ef8;
+}
+
 
 .calender {
   display: flex;
