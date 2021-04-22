@@ -1,6 +1,17 @@
 <header>
   <h2 class="app-title">HealthInvestment</h2>
-  <div><%= image_tag current_user.image, class: "header-icon" %></div>
+  <div class="header-right">
+    <%= link_to "https://www.instagram.com/", target: :_blank, rel: "noopener noreferrer" do %>
+      <div><i class="fab fa-instagram-square instagram-icon"></i></div>
+   <% end %>
+    <%= link_to "https://www.facebook.com/", target: :_blank, rel: "noopener noreferrer" do %>
+      <div><i class="fab fa-facebook-square facebook-icon"></i></div>
+     <% end %>
+    <%= link_to "https://twitter.com/?lang=ja", target: :_blank, rel: "noopener noreferrer" do %>
+      <div><i class="fab fa-twitter-square twitter-icon"></i></div>
+    <% end %>
+    <div><%= image_tag current_user.image, class: "header-icon" %></div>
+  </div>
 </header>
 
 <div class="wrapper">
@@ -69,7 +80,6 @@
         </div>
       </div>
       <div id="done">
-       
         <%# if @run.present? %>
           <%# <div>本日の予定は完了です！</div> %>
         <%# end %>
