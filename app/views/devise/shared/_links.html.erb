@@ -1,14 +1,15 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
-<% end %>
-
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <div class="to-login-wrapper"><%= link_to "すでにアカウントをお持ちの方", new_session_path(resource_name), class: "to-login" %><br /></div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <%= link_to "パスワードをお忘れですか？", new_password_path(resource_name), class: "forget-password" %><br />
 <% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <div class="to-signup-wrapper"><%= link_to "新規登録はこちら", new_registration_path(resource_name), class: "to-signup" %></div><br />
+<% end %>
+
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
