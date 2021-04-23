@@ -1,13 +1,16 @@
-<div>
-  <%= link_to "トップ", root_path %>
-  <div><%= image_tag @user.image, class: "user-image" %></div>
-  <div><%= @user.nickname %></div>
-  <div>目標</div>
-  <div><%= @user.goal %></div>
-  <div>ポイント</div>
-  <div><%= @user.point&.point %> pt</div>
-  <div>開始日</div>
-  <div><%= @user.registration_date %></div>
-  <%= link_to "ユーザー情報編集", edit_user_registration_path %>
-  <%= link_to "グループ作成", new_group_path %>
+<%= link_to ">トップ", root_path %>
+<div class="signup-wrapper">
+  <div class="show-image-wrapper"><%= image_tag @user.image, class: "user-image" %></div>
+  <div class="show-name"><%= @user.nickname %></div>
+  <div class="show-label">目標</div>
+  <div class="show-goal-wrapper">
+    <div><%= @user.goal %></div>
+  </div>
+  <div class="show-label">ポイント <div class="show-point"><%= @user.point&.point %> pt</div></div>
+ 
+  <div class="show-label">開始日</div>
+  <div class="show-registration-date"><%= @user.registration_date %></div>
+
+  <div class="edit-link-wrapper"><%= link_to "ユーザー情報を編集する", edit_user_registration_path, class: "edit-link" %></div>
+  <div class="group-link-wrapper"><%= link_to "グループを作成する", new_group_path, class: "group-link" %></div>
 </div>
