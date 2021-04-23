@@ -6,7 +6,7 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "signup-input", placeholder: "メールアドレス" %>
+        <%= f.email_field :email, autocomplete: "email", class: "signup-input", placeholder: "メールアドレス" %>
       </div>
 
       <div class="field">
@@ -41,7 +41,7 @@
       
 
       <div class="actions">
-        <%= f.submit "編集する", class: "input-signup" %>
+        <%= f.submit "編集を保存", class: "input-signup" %>
       </div>
     <% end %>
   </div>
