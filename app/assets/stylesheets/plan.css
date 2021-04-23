@@ -147,7 +147,6 @@ header {
 .more_list {
   margin-left: 10px;
   display: none;
-  cursor: pointer;
 }
 
 /* li {
@@ -170,8 +169,12 @@ header {
     inset 0 -1px 0 rgba(255, 255, 255, 0.2);
 } */
 
+.menu {
+  color: black;
+}
 .menu:hover {
   color: rgb(214, 26, 26);
+  cursor: pointer;
 }
 
 .achieve-done {

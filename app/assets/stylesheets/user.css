@@ -171,6 +171,23 @@
 }
 
 
+/* エラーメッセージ */
+.login-flash-message {
+  font-size: 15px;
+  color: red;
+}
+
+h2 {
+  font-size: 10px;
+  color: red;
+}
+
+li {
+  font-size: 15px;
+  color: red;
+}
+
+
 
 /* 詳細ページ */
 .user-image {

@@ -74,3 +74,5 @@ gem 'image_processing', '~>1.2'
 gem 'ransack'
 
 gem 'font-awesome-sass'
+
+gem 'rails-i18n'
