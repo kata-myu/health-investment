@@ -1,3 +1,178 @@
+/* ログインページ */
+
+.login-wrapper {
+  margin-top: 100px;
+  margin-left: 470px;
+  width: 500px;
+  border: solid 1px rgb(204, 202, 202);
+}
+
+.login-form {
+  margin-top: 30px;
+  margin-left: 125px;
+}
+
+.login-app-title {
+  margin-left: 10px;
+  margin-bottom: 50px;
+  font-size: 25px;
+  color: rgb(182, 179, 179);
+  
+}
+
+.input-email {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 30px;
+  background-color: rgb(247, 244, 244);
+  border: solid 1px rgb(223, 219, 219);
+}
+
+.input-password {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 20px;
+  background-color: rgb(247, 244, 244);
+  border: solid 1px rgb(223, 219, 219);
+}
+
+.keep-login {
+  color: gray;
+  font-size: 13px;
+}
+
+.input-login {
+  width: 250px;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: rgb(152, 225, 243);
+  border: solid 1px rgb(152, 225, 243);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.input-login:hover {
+  background-color: rgb(105, 213, 240);
+}
+
+.forget-password {
+  font-size: 13px;
+}
+
+.to-signup-wrapper {
+  width: 250px;
+  height: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: rgb(152, 225, 243);
+  border: solid 1px rgb(152, 225, 243);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.to-signup-wrapper:hover {
+  background-color: rgb(105, 213, 240);
+}
+.to-signup {
+  color: white;  
+}
+
+
+/* 新規登録ページ */
+
+.signup-wrapper {
+  margin-top: 50px;
+  margin-left: 470px;
+  width: 500px;
+  border: solid 1px rgb(204, 202, 202);
+}
+
+.signup-form {
+  margin-top: 30px;
+  margin-left: 125px;
+}
+
+.signup-app-title {
+  margin-left: 10px;
+  margin-bottom: 50px;
+  font-size: 25px;
+  color: rgb(182, 179, 179); 
+}
+
+.signup-input {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 30px;
+  background-color: rgb(247, 244, 244);
+  border: solid 1px rgb(223, 219, 219);
+}
+
+.signup-input-goal {
+  width: 250px;
+  height: 70px;
+  margin-bottom: 30px;
+  background-color: rgb(247, 244, 244);
+  border: solid 1px rgb(223, 219, 219);
+}
+
+.image-label {
+  width: 250px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: rgb(168, 166, 166);
+  cursor: pointer;
+  background-color: rgb(247, 244, 244);
+  border: solid 1px rgb(223, 219, 219);
+  display: block;
+}
+
+.input-signup {
+  width: 250px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: white;
+  background-color: rgb(152, 225, 243);
+  border: solid 1px rgb(152, 225, 243);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.input-signup:hover {
+  background-color: rgb(105, 213, 240);
+}
+
+.signup-border {
+  border-bottom: solid 1px rgb(218, 215, 215);
+}
+
+.to-login-wrapper {
+  width: 250px;
+  height: 30px;
+  margin-top: 30px;
+  margin-left: 125px;
+  margin-bottom: 30px;
+  background-color: rgb(152, 225, 243);
+  border: solid 1px rgb(152, 225, 243);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.to-login-wrapper:hover {
+  background-color: rgb(105, 213, 240);
+}
+.to-login {
+  color: white;  
+}
+
+
+
+/* 詳細ページ */
 .user-image {
   height: 250px;
   width: 250px;
