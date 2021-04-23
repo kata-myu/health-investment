@@ -2,3 +2,8 @@ ja:
   time:
     formats:
       default: "%m/%d %H:%M"
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        
