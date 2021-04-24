@@ -20,6 +20,8 @@ module RunCount
         if @days_a[-2] != @days_a[-1] - 1
           @runs_a.push(count - 1)
           count = 1
+        else
+          @runs_a.push(count)
         end
       end
     end

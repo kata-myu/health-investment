@@ -3,7 +3,7 @@ module PointActions
 
   def increase
 
-    users = User.all
+    users = User.all.includes(:point)
 
     users.each do |user|
       if user.point == nil
@@ -59,7 +59,7 @@ module PointActions
 
 
   def decrease
-    users = User.all
+    users = User.all.includes(:point)
     today = Date.today
 
     users.each do |user|

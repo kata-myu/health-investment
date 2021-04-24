@@ -88,9 +88,67 @@
 }
 
 
+
 /* グループ一覧ページ */
 
 .group-area {
   margin-top: 20px;
   border: solid 1px;
+}
+
+
+/* グループ新規作成ページ */
+
+.to-calender {
+  margin-bottom: 10px;
+}
+
+.new-group-wrapper {
+  margin-top: 100px;
+  margin-left: 470px;
+  width: 500px;
+  border: solid 1px rgb(204, 202, 202);
+}
+
+.new-group-title {
+  margin-bottom: 50px;
+  font-size: 25px;
+  color: rgb(182, 179, 179); 
+}
+
+.new-group-form {
+  margin-top: 30px;
+  margin-left: 125px;
+}
+
+.group-name-input {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 30px;
+  background-color: rgb(247, 244, 244);
+  border: solid 1px rgb(223, 219, 219);
+}
+
+.group-promotion-input {
+  width: 250px;
+  height: 140px;
+  margin-bottom: 30px;
+  background-color: rgb(247, 244, 244);
+  border: solid 1px rgb(223, 219, 219);
+}
+
+
+.input-submit {
+  width: 250px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: white;
+  background-color: rgb(152, 225, 243);
+  border: solid 1px rgb(152, 225, 243);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.input-submit:hover {
+  background-color: rgb(105, 213, 240);
 }
