@@ -4,4 +4,5 @@ class Group < ApplicationRecord
   has_many :messages
 
   validates :name, presence: true
+  validates :promotion, presence: true
 end
