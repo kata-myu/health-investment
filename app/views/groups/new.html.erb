@@ -1,12 +1,14 @@
-<div>
-<%= link_to "カレンダーへ", root_path %>
-<%= link_to "グループ検索へ", search_group_groups_path %>
-</div>
-<div>
-  <%= form_with model: @group, local: true do |f| %>
-    <%= f.label :グループ名 %>
-    <%= f.text_field :name, placeholder: "グループ名を入力..." %>
-    <%= f.text_area :promotion, placeholder: "グループの紹介や宣伝を記入..." %>
-    <%= f.submit "グループを作成" %>
-  <% end %>
+<div class="to-calender"><%= link_to ">カレンダーへ戻る", root_path %></div>
+<div><%= link_to ">グループを探す", search_group_groups_path %></div>
+
+<div class="new-group-wrapper">
+  <div class="new-group-form">
+    <h2 class="new-group-title">グループを作成します</h2>
+
+    <%= form_with model: @group, local: true do |f| %>
+      <%= f.text_field :name, placeholder: "グループ名を入力...", class: "group-name-input" %>
+      <%= f.text_area :promotion, placeholder: "グループの紹介や宣伝を記入...", class: "group-promotion-input" %>
+      <%= f.submit "グループを作成", class: "input-submit" %>
+    <% end %>
+  </div>
 </div>
