@@ -1,22 +1,22 @@
 <div class="side-bar">
   <div class="side-bar-header">
     <div class="header-name">
-      <%= link_to current_user.nickname, user_path(current_user) %>
+      <%= link_to "▷自分でグループをつくる", new_group_path, class: "side-text" %>
     </div>
     <div class="create-room">
-      <%= link_to "グループを探す", search_group_groups_path %>
+      <%= link_to "▷グループを探す", search_group_groups_path, class: "side-text" %>
     </div>
   </div>
 
   <div class="groups">
     <% if current_user.groups.empty? %>
-      <div>まだグループに所属していません。</div>
+      <div class="side-text">まだグループに所属していません。</div>
       <%= link_to "グループを作成", new_group_path %>
     <% else %>
       <% current_user.groups.each do |group| %>
         <div class="group">
           <div class="group-name">
-            <%= link_to group.name, group_path(group) %>
+            <i class="fas fa-users" style="color: white;"></i>  <%= link_to group.name, group_path(group), class: "side-text side-group-name" %>
           </div>
         </div>
       <% end %>

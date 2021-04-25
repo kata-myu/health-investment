@@ -1,29 +1,29 @@
 <div class="current-group">
   <div class="current-group-header">
-    <%= @group.name %>
-    <%= link_to "このグループをぬける", leave_group_group_path(@group), method: :delete %>
+    <div class="center-group-name"><%= @group.name %></div>
+    <div class="leave-group-wrapper"><i class="far fa-times-circle"></i></i><%= link_to "このグループからぬける", leave_group_group_path(@group), method: :delete, class: "leave-group" %></div>
   </div>
   <div class="current-group-main">
     <div class="main-heading">
-      <div>本日の予定</div>
-      <div>達成者  0人</div>
+      <div class="group-plans">本日の予定</div>
+      <div class="group-achieve-num">現在までの完了人数  <span class="achieve-num"><%= @achieves %></span>人</div>
     </div>
     <div class="members">
       <% @users.each do |user| %>
         <div class="member-box">
           <div class="member">
-            <div class="member-name"><%= user.nickname %></div>
+            <div class="member-name"><%= image_tag user.image, class: "chat-user-image" %><%= user.nickname %></div>
             <div class="run-status">
               <% if user.runs.find_by(date: Date.today) == nil %>
-                <div>未達</div>
+                <div class="not-achieve">未達</div>
               <% else %>
-                <div>達成</div>
+                <div class="get-achieve">達成</div>
               <% end %>
             </div>
           </div>
           <div class="member-plan">
             <% user.plans.where(date: Date.today).each do |plan| %>
-              <div>・<%= plan.plan %></div>
+              <div class="plan-menu">・<%= plan.plan %></div>
             <% end %>
           </div>
         </div>
@@ -35,12 +35,13 @@
 
 <div class="chat">
   <div class="chat-header">
-    <%= link_to "カレンダーに戻る", root_path %>
+    <i class="far fa-calendar-alt"></i><%= link_to "カレンダーに戻る", root_path, class: "rigth-to-calendar" %>
   </div>
   <div class="chat-main">
     <% @messages.each do |message| %>
       <div class="message">
         <div class="upper-message">
+          <div><%= image_tag message.user.image, class: "chat-user-image" %></div>
           <div class="message-user">
             <%= message.user.nickname %>
           </div>

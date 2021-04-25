@@ -24,6 +24,14 @@ class GroupsController < ApplicationController
     @users = @group.users
     @message = Message.new
     @messages = @group.messages.includes(:user)
+
+    achieves = []
+    @users.each do |user|
+      if user.runs.where(date: Date.today).present?
+        achieves.push(user)
+      end
+    end
+    @achieves = achieves.length
   end
 
   
