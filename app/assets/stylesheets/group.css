@@ -6,37 +6,95 @@
 .side-bar {
   width: 200px;
   height: 100vh;
-  background-color: royalblue;
+  background-color: rgb(65, 64, 64);
+  border-right: solid 1px  rgb(194, 191, 191);
 }
 .side-bar-header {
   height: 100px;
-  border: solid 1px;
+  border-bottom: solid 1px rgb(41, 40, 40);
 }
 
 .group {
   padding-top: 40px;
 } 
 
+.side-text {
+  color: white;
+}
+.side-text:hover {
+  color: red;
+}
+
+.header-name {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.side-group-name {
+  font-size: 18px;
+  /* font-weight: bold; */
+}
+
 
 /* グループ（中央） */
 .current-group {
   width: 900px;
   height: 100vh;
-  background-color: skyblue;
+  background-color: rgb(235, 231, 231);
+  border-right: solid 1px rgb(194, 191, 191);
 }
 .current-group-header {
   height: 100px;
-  border: solid 1px;
+  border-bottom: solid 1px rgb(194, 191, 191);
+  display: flex;
+  justify-content: space-between;
+}
+
+.center-group-name {
+  padding-top: 20px;
+  padding-left: 50px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.leave-group-wrapper {
+  padding-right: 20px;
+}
+.leave-group {
+  font-size: 12px;
+  color: black;
+}
+.leave-group:hover {
+  color: red;
 }
 
 .main-heading {
   display: flex;
+  /* justify-content: space-between; */
 }
 
+.group-plans {
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.group-achieve-num {
+  padding-top: 15px;
+  padding-right: 30px;
+  margin-left: 40px;
+}
+
+.achieve-num {
+  color: green;
+  font-size: 25px;
+  font-weight: bold;
+}
+ 
 .members {
   display: flex;
   margin-top: 25px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
 }
 
@@ -55,16 +113,54 @@
 	transition: 0.3s;
 }
 
+.member {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.member-name {
+  font-size: 18px;
+  
+}
+
+.run-status {
+  margin-right: 10px;
+}
+
+.not-achieve {
+  color: red;
+}
+.get-achieve {
+  color: green;
+  font-weight: bold;
+}
+
+.plan-menu {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
 
 /* チャット（右側） */
 .chat {
   width: 340px;
   height: 100vh;
-  background-color: green;
+  background-color: rgb(253, 251, 251);
 }
 .chat-header {
   height: 100px;
-  border: solid 1px;
+  border-bottom: solid 1px rgb(194, 191, 191);
+  text-align: right;
+  padding-top: 5px;
+}
+
+.rigth-to-calendar {
+  color: black;
+  padding-right: 10px;
+}
+.rigth-to-calendar:hover {
+  color: red;
 }
 
 .chat-main {
@@ -72,9 +168,45 @@
   overflow: scroll;
 }
 
+.message {
+  margin-top: 15px;
+  margin-left: 5px;
+  /* background-color: rgb(222, 240, 245); */
+}
+.message:hover {
+  background-color: rgb(238, 235, 235);
+}
+
+.upper-message {
+  display: flex;
+}
+
+.chat-user-image {
+  height: 30px;
+  width: 30px;
+  text-align: right;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.message-user {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.message-date {
+  margin-left: 10px;
+  font-size: 11px;
+  color: gray;
+}
+
+.lower-message {
+  margin-left: 40px;
+}
+
 .chat-form {
   height: 100px;
-  border: solid 1px;
+  border-top: solid 1px rgb(194, 191, 191);
 }
 .content-form {
   height: 80px;
@@ -89,12 +221,67 @@
 
 
 
-/* グループ一覧ページ */
+/* グループ検索ページ */
+
+.group-index-top {
+  margin-bottom: 15px;
+}
+
+.group-index-form {
+  margin-left: 470px;
+}
+.form-heading {
+  font-size: 25px;
+  color: rgb(168, 158, 158);
+  margin-bottom: 20px;
+}
+
+.group-index-wrapper {
+  height: 600px;
+  margin-top: 30px;
+  background-color: rgb(226, 225, 225);
+  margin-left: 410px;
+  width: 600px; 
+  border: solid 1px rgb(204, 202, 202);
+  overflow: scroll;
+}
 
 .group-area {
-  margin-top: 20px;
-  border: solid 1px;
+  width: 470px;
+  margin-top: 10px;
+  margin-left: 60px;
+  margin-right: 10px;
+  border: solid 1px  rgb(194, 191, 191);
+  background-color: white;
 }
+.group-area:hover {
+  background-color: rgb(121, 247, 247);
+}
+
+.join-group-link {
+  text-align: right;
+  font-size: 12px;
+}
+.join-link {
+  color: black;
+}
+.join-link:hover {
+  color: red;
+}
+
+.group-index-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.group-index-promotion {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
 
 
 /* グループ新規作成ページ */
