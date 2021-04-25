@@ -10,7 +10,9 @@
     <%= link_to "https://twitter.com/?lang=ja", target: :_blank, rel: "noopener noreferrer" do %>
       <div><i class="fab fa-twitter-square twitter-icon"></i></div>
     <% end %>
-    <div><%= image_tag current_user.image, class: "header-icon" %></div>
+    <% if current_user.image.attached? %>
+      <div><%= image_tag current_user.image, class: "header-icon" %></div>
+    <% end %>
   </div>
 </header>
 
@@ -20,7 +22,7 @@
     <div class="introduction">
       <div class="show-area">
         <%= link_to user_path(current_user.id) do %>
-          <%= image_tag current_user.image, class: "introduction-image" %> <br>
+          <%= image_tag current_user.image, class: "introduction-image" if current_user.image.attached? %> <br>
         <% end %>
         <div class="user-name"><%= current_user.nickname %></div>
       </div>
