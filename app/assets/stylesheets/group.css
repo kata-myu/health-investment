@@ -35,6 +35,10 @@
   /* font-weight: bold; */
 }
 
+.side-alert {
+  color: rgb(219, 214, 214);
+}
+
 
 /* グループ（中央） */
 .current-group {

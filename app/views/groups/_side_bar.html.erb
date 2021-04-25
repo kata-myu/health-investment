@@ -10,8 +10,7 @@
 
   <div class="groups">
     <% if current_user.groups.empty? %>
-      <div class="side-text">まだグループに所属していません。</div>
-      <%= link_to "グループを作成", new_group_path %>
+      <div class="side-alert">まだグループに所属していません。</div>
     <% else %>
       <% current_user.groups.each do |group| %>
         <div class="group">
