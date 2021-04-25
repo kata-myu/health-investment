@@ -5,7 +5,7 @@ header {
   /* background-size: 480 230; */
   /* background-repeat: no-repeat; */
   /* background-color: rgb(230, 230, 233); */
-  border-bottom: double 3px rgb(170, 168, 168);
+  background-color: rgb(87, 86, 86);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,21 +33,21 @@ header {
 }
 
 .instagram-icon {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-right: 20px;
   margin-top: 5px;
   color: rgb(241, 74, 241);
 }
 
 .facebook-icon {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-right: 20px;
   margin-top: 5px;
   color: #4d8cf1;
 }
 
 .twitter-icon {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-right: 20px;
   margin-top: 5px;
   color: #75A9FF;
@@ -83,7 +83,8 @@ header {
 }
 
 .contents {
-  margin-top: 30px;
+  padding-top: 30px;
+  background-color: white;
   /* display: flex; */
   /* justify-content: space-between; */
   flex-wrap: wrap;
@@ -344,12 +345,16 @@ a {
   text-decoration: none;
 }
 
+.logout {
+  color: white;
+}
+
 
 
 
 /* サイドバー */
 .side {
-  background-color: rgb(202, 205, 212);
+  background-color: rgb(65, 64, 64);
   /* background-image: url("main6"); */
   /* border: solid 1px rgb(192, 187, 187); */
   width: 240px;
@@ -384,47 +389,51 @@ a {
   text-align: center;
   padding-top: 10px;
   text-align: center;
-  color: black;
+  color:white;
 }
 
 .description {
   padding-top: 30px;
   padding-left: 10px;
   margin-bottom: 40px;
+  color: white;
 }
 
 
 .point-area {
   height: 120px;
-  border-right: solid 1px rgb(155, 151, 151);
-  border-left: solid 1px rgb(155, 151, 151);
+  /* border-right: solid 1px rgb(155, 151, 151);
+  border-left: solid 1px rgb(155, 151, 151); */
 }
 .point-head {
   padding-top: 25px;
   text-align: center;
+  color: white;
 }
 .user-point {
   padding-top: 10px;
   text-align: center;
   font-size: 22px;
-  color: green;
+  color: rgb(77, 238, 77);
   font-weight: bold;
 }
 
 
 .continuation-area {
   height: 120px;
-  border: solid 1px rgb(155, 151, 151);
+  border-bottom: solid 1px rgb(114, 112, 112);
+  border-top: solid 1px rgb(114, 112, 112);
 }
 .continuation-head {
   padding-top: 25px;
   text-align: center;
+  color: white;
 }
 .continuation-days {
   padding-top: 10px;
   text-align: center;
   font-size: 22px;
-  color: green;
+  color: rgb(77, 238, 77);
   font-weight: bold;
 }
 
@@ -533,7 +542,7 @@ a {
 
 /* フッター */
 footer {
-  background-color: rgb(108, 109, 112);
+  background-color: rgb(65, 64, 64);
   height: 100px;
   /* display: flex;
   justify-content: center;

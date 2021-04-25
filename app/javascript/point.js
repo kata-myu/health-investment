@@ -6,7 +6,7 @@ const point = () => {
   XHR.onload = () => {
     const point = XHR.response.point;
     console.log(point);
-    const pointMessage = `<p>${point}pt付与されました！</p>`;
+    const pointMessage = `<p style="color: white;">${point}pt付与されました！</p>`;
     const messageArea = document.getElementById("point-message");
     messageArea.insertAdjacentHTML("beforeend", pointMessage);
 
