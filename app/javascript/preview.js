@@ -1,6 +1,11 @@
-if(document.URL.match(/sign_up/) || document.URL.match(/edit/)) {
-  window.addEventListener("load", () => {
+const preview = () => {
+  if (document.getElementById("user_image")){
     const imageInput = document.getElementById("user_image");
+    if (imageInput.getAttribute("data-load") != null) {
+      return null;
+    }
+    imageInput.setAttribute("data-load", "true");
+
     imageInput.addEventListener("change", (e) => {
       const file = e.target.files[0];
       const blob = window.URL.createObjectURL(file);
@@ -11,5 +16,6 @@ if(document.URL.match(/sign_up/) || document.URL.match(/edit/)) {
       preview.setAttribute("class", "user-image-preview");
       imageArea.appendChild(preview);
     });
-  });
+  }
 }
+setInterval(preview, 1000);
