@@ -58,7 +58,7 @@
     <% end %>
   </div>
 
-  <%= form_with model: [@group, @message], class: "chat-form", local: true do |f| %>
+  <%= form_with model: [@group, @message], class: "chat-form" do |f| %>
     <%= f.text_area :content, class: "content-form", placeholder: "ここにテキストを入力..." %>
     <%= f.submit "つぶやく", class: "content-submit" %>
   <% end %>

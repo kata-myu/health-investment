@@ -65,7 +65,7 @@
   <div class="main">
     <div class="contents">
       <div class="upper-content">
-        <%= form_with model:@plan, class: "calender-form", local: true do |f| %>
+        <%= form_with model:@plan, class: "calender-form" do |f| %>
           <%#= f.label :日付を選択, class: "label" %>
           <%= f.date_field :date, class: "date-input" %>
           <%#= f.label :予定を入力, class: "label" %>
