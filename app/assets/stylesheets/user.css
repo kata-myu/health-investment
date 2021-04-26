@@ -84,7 +84,7 @@
 /* 新規登録ページ */
 
 .signup-wrapper {
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 470px;
   width: 500px;
   border: solid 1px rgb(204, 202, 202);
@@ -118,6 +118,13 @@
   border: solid 1px rgb(223, 219, 219);
 }
 
+
+.user-image-preview {
+  height: 50px;
+  width: 50px;
+  margin-left: 100px;
+  border-radius: 50%;
+}
 .image-label {
   width: 250px;
   height: 35px;

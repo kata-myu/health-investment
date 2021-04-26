@@ -29,7 +29,7 @@
         <%= f.text_area :goal, placeholder: "目標..." , class: "signup-input-goal" %>
       </div>
 
-      <div class="field">
+      <div class="field" id="user_image_area">
         <%= f.label :image, for: "user_image", value: "アイコン画像を選択", class: "image-label" %><br />
         <%= f.file_field :image, style: "display: none;" %>
       </div>
