@@ -16,13 +16,17 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :groups, only: [:index, :new, :create, :show] do
-    resources :messages, only: [:create, :destroy]
     collection do
       get 'search-group'
     end
     member do 
       post 'join-group'
       delete 'leave-group'
+    end
+    resources :messages, only: [:create, :destroy] do
+      collection do
+        get 'reload', defaults:{ format:'json' }
+      end
     end
   end
 end
