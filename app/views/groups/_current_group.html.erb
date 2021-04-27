@@ -1,4 +1,4 @@
-<div class="current-group">
+<div class="current-group" data-group=<%= @group.id %> >
   <div class="current-group-header">
     <div class="center-group-name"><%= @group.name %></div>
     <div class="leave-group-wrapper"><i class="far fa-times-circle"></i></i><%= link_to "このグループからぬける", leave_group_group_path(@group), method: :delete, class: "leave-group" %></div>
@@ -39,7 +39,7 @@
   </div>
   <div class="chat-main">
     <% @messages.each do |message| %>
-      <div class="message">
+      <div class="message" data-index=<%= message.id %>>
         <div class="upper-message">
           <div><%= image_tag message.user.image, class: "chat-user-image" %></div>
           <div class="message-user">

@@ -16,6 +16,8 @@ require("../push")
 require("../plandelete")
 require("../decreasepoint")
 require("../preview")
+require("../scroll")
+require("../reload")
 // require("../notification")
 
 
