@@ -18,11 +18,7 @@ RSpec.describe "Plans", type: :system do
       it "正しく入力すれば、保存ができ、トップページに表示される。" do
         # ログインする
         basic_pass new_user_session_path
-        visit new_user_session_path
-        fill_in 'user_email', with: @user.email
-        fill_in 'user_password', with: @user.password
-        find('input[name="commit"]').click
-        expect(current_path).to eq root_path
+        sign_in(@user)
         # 日付とプランを入力する
         fill_in 'plan_date', with: '002021-04-15'
         fill_in 'plan_plan', with: 'サッカー'
@@ -41,11 +37,7 @@ RSpec.describe "Plans", type: :system do
 
       it "簡単登録ボタンを押すと、予定が７こ保存される" do
         # ログインする
-        visit new_user_session_path
-        fill_in 'user_email', with: @user.email
-        fill_in 'user_password', with: @user.password
-        find('input[name="commit"]').click
-        expect(current_path).to eq root_path
+        sign_in(@user)
         # 簡単予定入力にホバーし、BasicをクリックするとPlanモデルのカウントが７上がる
         sleep(3)
         find("#quick-area").hover
