@@ -1,0 +1,159 @@
+@media (max-width: 1024px) {
+  p {
+    font-size: 14px;
+  }
+  .side {
+    width: 30%;
+  }
+  .main {
+    width: calc(100vw - 30%);
+  }
+
+  .content {
+    height: 287px;
+    width: 287px;
+    margin: 11px 25px;
+  }
+}
+
+
+@media (max-width: 599px) {
+
+  .app-title{
+    font-size: 15px;
+    margin-left: 20px;
+  }
+  .header-icon {
+    display: none;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  .wrapper {
+    height: 100%;
+  }
+
+  .side {
+    width: 30%;
+  }
+  .introduction{
+    height: 220px;
+  }
+  .introduction-image{
+    width: 50px;
+    height: 50px;
+    margin-left: 35px;
+    margin-top: 0px;
+  }
+  .description {
+    font-size: 12px;
+  }
+  .point-head{
+    font-size: 14px;
+  }
+  .continuation-head{
+    font-size: 14px;
+  }
+  .user-point{
+    font-size: 20px;
+  }
+  .continuation-days{
+    font-size: 20px;
+  }
+
+
+  .recommended {
+    height: 160px;
+  }
+  .link-wrapper{
+    padding-top: 30px;
+  }
+  .recommended-link{
+    font-size: 12px;
+  }
+  .groups-wrapper{
+    padding-top: 40px;
+  }
+  .groups-link{
+    font-size: 12px;
+  }
+  .side-copy {
+    height: 120px;
+    font-size: 15px;
+    padding-top: 40px;
+  }
+
+  .side-2{
+    height: 150px;
+    left: 0px;
+  }
+
+
+  .main {
+    width: calc(100vw - 30%);
+  }
+
+  .upper-content {
+    height: 80px;
+    margin-left: 10px;
+  }
+  .calender-form {
+    width: 150px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  .date-input {
+    width: 130px;
+    height: 20px;
+  }
+  .plan-input {
+    width: 130px;
+    height: 20px;
+  }
+  .submit-btn {
+    height: 25px;
+  }
+  #quick-area {
+    margin-left: 0px;
+
+  }
+  #quick-btn {
+    padding: 0;
+    display: none;
+  }
+  .quick-btn-head{
+    font-size: 1px;
+  }
+
+  .more_list {
+    display: block;
+  }
+  .menu {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .contents{
+    padding-top: 15px;
+  }
+  .content {
+    height: 70px;
+    width: 75px;
+    margin: 5px 5px;
+  }
+  .date {
+    font-size: 1px;
+  }
+  .plan {
+    height: 40px;
+    width: 62px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+}
