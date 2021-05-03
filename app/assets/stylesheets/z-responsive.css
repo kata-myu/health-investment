@@ -19,6 +19,10 @@
 
 @media (max-width: 599px) {
 
+  body {
+    height: 800px;
+  }
+
   .app-title{
     font-size: 15px;
     margin-left: 20px;
@@ -32,7 +36,7 @@
   }
 
   .wrapper {
-    height: 100%;
+    height: calc(800px - 150px);
   }
 
   .side {
@@ -44,7 +48,7 @@
   .introduction-image{
     width: 50px;
     height: 50px;
-    margin-left: 35px;
+    margin-left: 40px;
     margin-top: 0px;
   }
   .description {
@@ -85,10 +89,16 @@
     padding-top: 40px;
   }
 
+  .side-image {
+    display: none;
+  }
   .side-2{
+    display: none;
     height: 150px;
     left: 0px;
   }
+
+
 
 
   .main {
@@ -156,4 +166,12 @@
     margin-top: 5px;
     margin-left: 5px;
   }
+
+  .plan-element{
+    display: none;
+  }
+
+
+
+
 }
