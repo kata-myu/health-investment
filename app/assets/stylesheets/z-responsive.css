@@ -19,6 +19,8 @@
 
 @media (max-width: 599px) {
 
+  /* メイン画面 */
+
   body {
     height: 800px;
   }
@@ -87,6 +89,9 @@
     height: 120px;
     font-size: 15px;
     padding-top: 40px;
+    color: white;
+    background-color: rgb(65, 64, 64);
+    border-top: solid 1px rgb(114, 112, 112);
   }
 
   .side-image {
@@ -169,9 +174,93 @@
 
   .plan-element{
     display: none;
+    font-size: 1px;
+  }
+  .plan-element:first-child{
+    display: block;
+  }
+  /* ↑noneで全部消しておいて、あとから最初の１つだけ表示するようにしている。 */
+
+  .achieve-check {
+    height: 8px;
+    width: 8px;
+  }
+
+  footer {
+    display: none;
   }
 
 
+  /* ユーザー
 
+  ログインページ */
+
+  .login-wrapper {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 350px;
+    border: none;
+  }
+  .login-form{
+    margin-left: 70px;
+  }
+
+  /* 新規登録ページ */
+
+  .signup-wrapper {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 350px;
+    border: none;
+  }
+  .signup-form{
+    margin-left: 70px;
+  }
+  .to-login-wrapper{
+    margin-left: 70px;
+  }
+
+
+  /* グループページ */
+
+  .group-wrapper {
+    display: initial;
+  }
+  /* ↑横並びを解除 */
+
+  .side-bar {
+    width: 100vw;
+    height: 300px;
+    overflow: scroll;
+  }
+
+  .current-group {
+    width: 100vw;
+  }
+  .center-group-name{
+    margin-right: 10px;
+    padding-left: 0;
+    font-size: 17px;
+  }
+  .members{
+    overflow: scroll;
+  }
+  .member-box{
+    margin-top: 10px;
+  }
+
+  .chat{
+    width: 100vw;
+  }
+  .content-form{
+    width: 350px;
+  }
+
+
+  /* グループ作成ページ */
+
+
+
+  /* グループ検索ページ */
 
 }
