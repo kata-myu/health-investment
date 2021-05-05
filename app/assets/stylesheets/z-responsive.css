@@ -259,8 +259,28 @@
 
   /* グループ作成ページ */
 
+  .new-group-wrapper{
+    margin-top: 10px;
+    margin-left: 0;
+    width: 350px;
+    border: none;
+  }
+  .new-group-form{
+    margin-left: 70px;
+  }
 
 
   /* グループ検索ページ */
+
+  .group-index-form{
+    margin-left: 10px;
+  }
+  .group-index-wrapper {
+    width: 100vw;
+    margin-left: 0;
+  }
+  .group-area {
+    width: 370px;
+  }
 
 }
