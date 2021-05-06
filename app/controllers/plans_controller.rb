@@ -29,6 +29,22 @@ class PlansController < ApplicationController
     end
   end
 
+  def day_plan
+    @day = Date.today + params[:day_id].to_i
+    @plans = Plan.where(date: Date.today + params[:day_id].to_i)
+    @plan = Plan.new
+  end
+
+  def day_plan_create
+    registrated_plans = current_user.plans.where(date: params[:plan][:date])
+    if registrated_plans.length <= 5
+       @plan = current_user.plans.create(plan_params)
+      redirect_to action: :index
+    else
+      redirect_to root_path, notice: "１日に登録できるプランの数は６つまでです！"
+    end
+  end
+
 
   def destroy
     plan = current_user.plans.find(params[:id])

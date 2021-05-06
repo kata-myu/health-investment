@@ -91,7 +91,9 @@
           <% if x == 0 %>
             <div class="content">
               <div class='date'>
-                <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+                <%= link_to "/plans/day_plan?day_id=#{x}" do %> 
+                  <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+                <% end %>
               </div>
               <div class="plan" data-index=<%= x + 1 %>>
                 <% if day[:plans].length != 0 %>
@@ -108,7 +110,9 @@
           <% else %>
             <div class="content">
               <div class='date'>
-                <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+                <%= link_to "/plans/day_plan?day_id=#{x}" do %>
+                  <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+                <% end %>
               </div>
               <div class="plan" data-index=<%= x + 1 %>>
                 <% if day[:plans].length != 0 %>
