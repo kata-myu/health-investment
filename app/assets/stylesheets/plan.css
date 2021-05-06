@@ -577,15 +577,24 @@ footer {
 
 /* day_planページ */
 
+.day-calender-form{
+  margin-left: 20px;
+  margin-top: 50px;
+}
+.day-plan-input{
+  width: 200px;
+  height: 35px;
+}
+
 .day-content {
   background-color: rgb(248, 246, 246);
-  height: 240px;
-  width: 240px;
+  height: 300px;
+  width: 300px;
   border: solid 1px rgb(165, 162, 162);
   box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
 	transition: 0.3s;
   margin-top: 50px;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .day-content:hover {
@@ -600,8 +609,8 @@ footer {
 
 
 .day-plan {
-  height: 170px;
-  width: 220px;
+  height: 230px;
+  width: 280px;
   background-color: rgb(201, 238, 248);
   margin-left: 10px;
   margin-top: 30px;
@@ -611,6 +620,7 @@ footer {
 .day-plan-element {
   cursor: pointer;
   font-weight: bold;
+  font-size: 18px;
 }
 .day-plan-element:hover {
   border: solid 1px;

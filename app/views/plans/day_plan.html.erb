@@ -1,5 +1,13 @@
 <%= link_to "戻る", root_path %>
 
+<div id="day-done"></div>
+
+<%= form_with model:@plan, url:day_plan_create_plans_path, method: :post, class: "day-calender-form" do |f| %>
+  <%= f.hidden_field :date, value: @day, class: "day-date-input" %>
+  <%= f.text_field :plan, class: "day-plan-input", placeholder: "プランを入力..." %>
+  <%= f.submit "保存", class: "day-submit-btn" %>
+<% end %>
+
 <% if @day == Date.today %>
   <div class="day-content">
     <div class="day-date"><%= @day %></div>
