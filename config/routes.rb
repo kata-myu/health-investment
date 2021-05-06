@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'point'
       get 'decrease_point'
       get 'push'
+      get 'day_plan'
     end
   end
   resources :users, only: :show

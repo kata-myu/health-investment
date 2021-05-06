@@ -1,0 +1,31 @@
+<%= link_to "戻る", root_path %>
+
+<% if @day == Date.today %>
+  <div class="day-content">
+    <div class="day-date"><%= @day %></div>
+    <div class="day-plan">
+      <% if @plans.length != 0 %>
+        <% @plans.each do |plan| %>
+          <% if Plan.find(plan.id).achievement == nil  %>
+            <div class="day-plan-element" ><input type="checkbox" class="day-achieve-check" data-id=<%= plan.id %>><span><%= plan.plan %></span> <div class="day-plan-delete"><span class="day-plan-delete-btn" data-id=<%= plan.id %>>削除</span></div></div>
+          <% else %>
+            <div class="day-plan-element" ><input type="checkbox" checked="checked" style="pointer-events: none;" class="day-achieve-checked" data-id=<%= plan.id  %>> <span><%= plan.plan %></span> <div class="day-plan-delete"><span class="day-plan-delete-btn" data-id=<%= plan.id %> style="pointer-events: none;">達成済み</span></div></div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="day-content">
+    <div class="day-date"><%= @day %></div>
+    <div class="day-plan">
+      <% if @plans.length != 0 %>
+        <% @plans.each do |plan| %>
+          <div class="day-plan-element" ><span>・<%= plan.plan %></span> <div class="day-plan-delete"><span class="day-plan-delete-btn" data-id=<%= plan.id %>>削除</span></div></div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+

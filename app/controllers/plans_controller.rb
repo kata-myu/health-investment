@@ -29,6 +29,11 @@ class PlansController < ApplicationController
     end
   end
 
+  def day_plan
+    @day = Date.today + params[:day_id].to_i
+    @plans = Plan.where(date: Date.today + params[:day_id].to_i)
+  end
+
 
   def destroy
     plan = current_user.plans.find(params[:id])

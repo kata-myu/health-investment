@@ -181,6 +181,15 @@
   }
   /* ↑noneで全部消しておいて、あとから最初の１つだけ表示するようにしている。 */
 
+  .plan-element:hover{
+    border: initial;
+    box-shadow: initial;
+	  transform: initial;
+  }
+  .plan-delete-btn{
+    display: none;
+  }
+
   .achieve-check {
     height: 8px;
     width: 8px;
