@@ -8,6 +8,7 @@ module PointActions
       render json: {point: "already"}
       return
     end
+    # user1がすでにupdateされているということはその日にすでにpoint付与が行われているので、ここで終了
 
 
     users = User.all.includes(:point)
