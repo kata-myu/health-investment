@@ -2,6 +2,13 @@ module PointActions
   extend ActiveSupport::Concern
 
   def increase
+  
+    user1 = User.find(1)
+    if user1.point.updated_at.to_s.include?(Date.today.to_s)
+      render json: {point: "already"}
+      return
+    end
+
 
     users = User.all.includes(:point)
 
@@ -59,6 +66,13 @@ module PointActions
 
 
   def decrease
+    user1 = User.find(1)
+    if user1.point.updated_at.to_s.include?(Date.today.to_s)
+      render json: {point: "already"}
+      return
+    end
+
+    
     users = User.all.includes(:point)
     today = Date.today
 

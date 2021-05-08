@@ -6,9 +6,13 @@ const point = () => {
   XHR.onload = () => {
     const point = XHR.response.point;
     console.log(point);
+    if(point == "already"){
+      return null;
+    }else{
     const pointMessage = `<p style="color: white;">${point}pt付与されました！</p>`;
     const messageArea = document.getElementById("point-message");
     messageArea.insertAdjacentHTML("beforeend", pointMessage);
+    }
 
     if (XHR.status != 200) {
       alert (`Error ${XHR.status}: ${XHR.statusText}`);
