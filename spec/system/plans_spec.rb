@@ -50,11 +50,11 @@ RSpec.describe "Plans", type: :system do
 
     end
 
-    context "登録に失敗するとき" do
-      it "正しく入力されていないと、保存ができず、トップページに表示されない。" do
-      end
+    # context "登録に失敗するとき" do
+    #   it "正しく入力されていないと、保存ができず、トップページに表示されない。" do
+    #   end
 
-    end
+    # end
 
   end
 end
