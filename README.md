@@ -50,13 +50,6 @@ HealthInvestment
 
 ## 実装した機能のGIF
 
-####　最新のGif
-[![Image from Gyazo](https://i.gyazo.com/522d6f9fd2ef98b823651ba774080f81.gif)](https://gyazo.com/522d6f9fd2ef98b823651ba774080f81)
-
-[![Image from Gyazo](https://i.gyazo.com/cb57ec95ba5400d0c6e1c053f16f6e14.gif)](https://gyazo.com/cb57ec95ba5400d0c6e1c053f16f6e14)
-
-[![Image from Gyazo](https://i.gyazo.com/b3668c4da04b983964838218ba8f219e.gif)](https://gyazo.com/b3668c4da04b983964838218ba8f219e)
-
 #### 運動プランを保存
 [![Image from Gyazo](https://i.gyazo.com/585292269fbaa874507d1f687d4d3814.gif)](https://gyazo.com/585292269fbaa874507d1f687d4d3814)
 
