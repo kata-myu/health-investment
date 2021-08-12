@@ -50,7 +50,7 @@ HealthInvestment
 
 ## 実装した機能のGIF
 
-[![Image from Gyazo](https://i.gyazo.com/cb57ec95ba5400d0c6e1c053f16f6e14.png)](https://gyazo.com/cb57ec95ba5400d0c6e1c053f16f6e14)
+[![Image from Gyazo](https://i.gyazo.com/cb57ec95ba5400d0c6e1c053f16f6e14.gif)](https://gyazo.com/cb57ec95ba5400d0c6e1c053f16f6e14)
 
 [![Image from Gyazo](https://i.gyazo.com/b3668c4da04b983964838218ba8f219e.gif)](https://gyazo.com/b3668c4da04b983964838218ba8f219e)
 
