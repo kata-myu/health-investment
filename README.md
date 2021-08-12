@@ -51,7 +51,7 @@ HealthInvestment
 ## 実装した機能のGIF
 
 ####　最新のGif
-[![Image from Gyazo](https://i.gyazo.com/cb7c79696bcfa0d0fba1c3eb9745ba30.gif)](https://gyazo.com/cb7c79696bcfa0d0fba1c3eb9745ba30)
+[![Image from Gyazo](https://i.gyazo.com/522d6f9fd2ef98b823651ba774080f81.gif)](https://gyazo.com/522d6f9fd2ef98b823651ba774080f81)
 
 [![Image from Gyazo](https://i.gyazo.com/cb57ec95ba5400d0c6e1c053f16f6e14.gif)](https://gyazo.com/cb57ec95ba5400d0c6e1c053f16f6e14)
 
