@@ -9,7 +9,7 @@ const achieve = () => {
     checkbox.addEventListener("click", (e) => {
       const id = e.target.getAttribute("data-id");
 
-      const checkBox = e.toElement; //発火した要素を取得
+      const checkBox = e.target; //発火した要素を取得
       const parent = checkBox.parentNode;
       const deleteBtn = parent.lastElementChild.lastElementChild;
       console.log(deleteBtn);
